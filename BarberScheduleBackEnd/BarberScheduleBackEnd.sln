@@ -4,10 +4,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{B0E665CD-C90D-4B04-9D78-276ABA9FC3B5}"
+	ProjectSection(SolutionItems) = preProject
+		GatewayDoc.md = GatewayDoc.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{7BE9C423-9D71-4E6C-831C-B5D32AC3B47D}"
+	ProjectSection(SolutionItems) = preProject
+		IntegrationDoc.md = IntegrationDoc.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6C86FC68-6439-41B3-8742-0ABEC19306E2}"
+	ProjectSection(SolutionItems) = preProject
+		ServicesDoc.md = ServicesDoc.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution

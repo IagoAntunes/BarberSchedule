@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BarberSchedule.Services.BarberShop.Models
 {
@@ -17,5 +15,8 @@ namespace BarberSchedule.Services.BarberShop.Models
         public string Number { get; set; }
         public string Photo { get; set; }
         public string AvailableTimes { get; set; }
+        public double Price { get; set; }
+
+        public ICollection<BarberShopPaymentMethodsModel> BarberShopPaymentMethods { get; set; }
     }
 }

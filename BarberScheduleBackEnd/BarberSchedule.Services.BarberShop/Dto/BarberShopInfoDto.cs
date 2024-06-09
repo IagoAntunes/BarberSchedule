@@ -11,5 +11,7 @@
         public string Number { get; set; }
         public string Photo { get; set; }
         public string AvailableTimes { get; set; }
+        public ICollection<int> PaymentMethods { get; set; }
+
     }
 }

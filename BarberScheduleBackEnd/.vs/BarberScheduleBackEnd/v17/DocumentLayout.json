@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DFC70325-FBA1-4917-937C-730F30E477D8}|Itens de Solu\u00E7\u00E3o{DFC70325-FBA1-4917-937C-730F30E477D8}|C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{DFC70325-FBA1-4917-937C-730F30E477D8}|Itens de Solu\u00E7\u00E3o{DFC70325-FBA1-4917-937C-730F30E477D8}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.barbershop\\dto\\paymentmethoddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|solutionrelative:barberschedule.services.barbershop\\dto\\paymentmethoddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D119EE75-8E43-43BF-890D-D0C07767701F}|BarberSchedule.Services.AuthAPI\\BarberSchedule.Services.AuthAPI.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.authapi\\controllers\\authapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D119EE75-8E43-43BF-890D-D0C07767701F}|BarberSchedule.Services.AuthAPI\\BarberSchedule.Services.AuthAPI.csproj|solutionrelative:barberschedule.services.authapi\\controllers\\authapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.barbershop\\models\\paymentmethodmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|solutionrelative:barberschedule.services.barbershop\\models\\paymentmethodmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.barbershop\\service\\paymentmethodsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|solutionrelative:barberschedule.services.barbershop\\service\\paymentmethodsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.barbershop\\service\\barbershopinfoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|solutionrelative:barberschedule.services.barbershop\\service\\barbershopinfoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +34,54 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BarberShopInfoService.cs",
+              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Service\\BarberShopInfoService.cs",
+              "RelativeDocumentMoniker": "BarberSchedule.Services.BarberShop\\Service\\BarberShopInfoService.cs",
+              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Service\\BarberShopInfoService.cs",
+              "RelativeToolTip": "BarberSchedule.Services.BarberShop\\Service\\BarberShopInfoService.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowCkAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T20:29:32.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaymentMethodsService.cs",
+              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Service\\PaymentMethodsService.cs",
+              "RelativeDocumentMoniker": "BarberSchedule.Services.BarberShop\\Service\\PaymentMethodsService.cs",
+              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Service\\PaymentMethodsService.cs",
+              "RelativeToolTip": "BarberSchedule.Services.BarberShop\\Service\\PaymentMethodsService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T20:29:29.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-06-09T14:43:27.685Z",
+              "Title": "PaymentMethodDto.cs",
+              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Dto\\PaymentMethodDto.cs",
+              "RelativeDocumentMoniker": "BarberSchedule.Services.BarberShop\\Dto\\PaymentMethodDto.cs",
+              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Dto\\PaymentMethodDto.cs",
+              "RelativeToolTip": "BarberSchedule.Services.BarberShop\\Dto\\PaymentMethodDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T20:26:15.638Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthApiController.cs",
-              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.AuthAPI\\Controllers\\AuthApiController.cs",
-              "RelativeDocumentMoniker": "BarberSchedule.Services.AuthAPI\\Controllers\\AuthApiController.cs",
-              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.AuthAPI\\Controllers\\AuthApiController.cs",
-              "RelativeToolTip": "BarberSchedule.Services.AuthAPI\\Controllers\\AuthApiController.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAAAC0AAAAJAAAA",
+              "Title": "PaymentMethodModel.cs",
+              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Models\\PaymentMethodModel.cs",
+              "RelativeDocumentMoniker": "BarberSchedule.Services.BarberShop\\Models\\PaymentMethodModel.cs",
+              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Models\\PaymentMethodModel.cs",
+              "RelativeToolTip": "BarberSchedule.Services.BarberShop\\Models\\PaymentMethodModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T14:29:50.16Z",
+              "WhenOpened": "2024-06-09T20:21:45.275Z",
               "EditorCaption": ""
             }
           ]

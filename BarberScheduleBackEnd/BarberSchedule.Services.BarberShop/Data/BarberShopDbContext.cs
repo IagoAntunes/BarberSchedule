@@ -11,6 +11,8 @@ namespace BarberSchedule.Services.AuthAPI.Data
             
         }
         public DbSet<BarberShopInfoModel> BarberShopInfo { get; set; }
+        public DbSet<BarberShopPaymentMethodsModel> BarberShopPaymentMethods { get; set; }
+        public DbSet<PaymentMethodModel> PaymentMethods { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

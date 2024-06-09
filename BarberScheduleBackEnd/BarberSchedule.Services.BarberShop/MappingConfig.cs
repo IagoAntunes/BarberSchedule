@@ -10,7 +10,12 @@ namespace BarberSchedule.Services.AuthAPI
         public static MapperConfiguration? RegisterMaps()
         {
             var mappingConfig = new MapperConfiguration(
-                config => config.CreateMap<BarberShopInfoDto, BarberShopInfoModel>().ReverseMap());
+                config =>
+                {
+                    config.CreateMap<BarberShopInfoDto, BarberShopInfoModel>().ReverseMap();
+                    config.CreateMap<PaymentMethodDto, PaymentMethodModel>().ReverseMap();
+                });
+
 
             return mappingConfig;
         }

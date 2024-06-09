@@ -14,6 +14,7 @@ IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 
 builder.Services.AddSingleton(mapper);
 builder.Services.AddScoped<IBarberShopInfoService,BarberShopInfoService>();
+builder.Services.AddScoped<IPaymentMethodsService,PaymentMethodsService>();
 var barberShopConnectionString = builder.Configuration.GetConnectionString("BarberShopInfoDefaultConnection");
 builder.Services.AddDbContext<BarberShopInfoDbContext>(options =>
 {

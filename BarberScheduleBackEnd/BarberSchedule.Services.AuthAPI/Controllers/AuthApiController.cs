@@ -18,6 +18,31 @@ namespace BarberSchedule.Services.AuthAPI.Controllers
             _response = new ResponseDto();
         }
 
+        [HttpPost("login/client")]
+        public async Task<IActionResult> LoginClient([FromBody] LoginClientRequest request)
+        {
+            var result = await _authService.LoginClient(request);
+            if(result.User == null)
+            {
+                _response.IsSuccesful = false;
+                _response.Message = "Invalid email or password";
+                return BadRequest(_response);
+            }
+            return Ok(result);
+        }
+        [HttpPost("login/barberShop")]
+        public async Task<IActionResult> LoginBarberShop([FromBody] LoginBarberShopRequestDto request)
+        {
+            var result = await _authService.LoginBarberShop(request);
+            if(result.BarberShop == null)
+            {
+                _response.IsSuccesful = false;
+                return BadRequest();
+            }
+            return Ok(result);
+        }
+
+
         [HttpPost("register/client")]
 
         public async Task<IActionResult> Register(RegisterClientRequestDto request)

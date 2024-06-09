@@ -3,6 +3,7 @@ using BarberSchedule.Services.AuthAPI.Data;
 using BarberSchedule.Services.AuthAPI.Dto;
 using BarberSchedule.Services.AuthAPI.Models;
 using BarberSchedule.Services.AuthAPI.Services.Interface;
+using BarberSchedule.Services.BarberShop.Dto;
 using Microsoft.AspNetCore.Identity;
 
 namespace BarberSchedule.Services.AuthAPI.Services
@@ -35,6 +36,78 @@ namespace BarberSchedule.Services.AuthAPI.Services
             await _userManager.AddToRoleAsync(user, roleName);
         }
 
+        public async Task<LoginBarberShopResponseDto> LoginBarberShop(LoginBarberShopRequestDto request)
+        {
+            var barberShop = _context.Users.FirstOrDefault(u => u.Email == request.Email);
+            if(barberShop == null)
+            {
+                return new LoginBarberShopResponseDto();
+            }
+
+            var loggedd = await _userManager.CheckPasswordAsync(barberShop,request.Password);
+            if(loggedd == false)
+            {
+                new LoginBarberShopResponseDto();
+            }
+
+            var barberShopInfo = await _barberShopInfoService.GetBarberShopInfo(barberShop);
+
+            var barberShopDto = new BarberShopInfoDto()
+            {
+                UserId = barberShopInfo.UserId,
+                Name = barberShopInfo.Name,
+                Description = barberShopInfo.Description,
+                PhoneNumber = barberShopInfo.PhoneNumber,
+                State = barberShopInfo.State,
+                City = barberShopInfo.City,
+                Number = barberShopInfo.Number,
+                Photo = barberShopInfo.Photo,
+                AvailableTimes = barberShopInfo.AvailableTimes,
+                PaymentMethods = barberShopInfo.PaymentMethods,
+            };
+
+            var response = new LoginBarberShopResponseDto()
+            {
+                BarberShop = barberShopDto,
+                Token = ""
+            };
+
+            return response;
+
+        }
+
+        public async Task<LoginResponseUserDto> LoginClient(LoginClientRequest request)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Email == request.Email);
+            if(user == null)
+            {
+                return new LoginResponseUserDto();
+            }
+            var resultLogin = await _userManager.CheckPasswordAsync(user, request.Password);
+            if (resultLogin == false)
+            {
+                return new LoginResponseUserDto();
+            }
+            //TODO JWT GENERATOR
+
+            var userDto = new UserDto()
+            {
+                Id = user.Id,
+                Email = user.Email,
+                Name = user.UserName,
+                PhoneNumber = user.PhoneNumber,
+                Photo = user.Photo,
+            };
+
+            var response = new LoginResponseUserDto()
+            {
+                User = userDto,
+                Token = "",
+            };
+
+            return response;
+        }
+
         public async Task<string> RegisterBarberShop(RegisterBarberShopRequestDTO request)
         {
             try
@@ -58,7 +131,7 @@ namespace BarberSchedule.Services.AuthAPI.Services
                         await AsignRole(request.RoleName,userToReturn);
                     }
 
-                    var barberShopInfo = new BarberShopInfoModel
+                    var barberShopInfo = new CreateBarberShopInfoDto
                     {
                         Name = request.Name,
                         UserId = userToReturn.Id,
@@ -69,6 +142,7 @@ namespace BarberSchedule.Services.AuthAPI.Services
                         City = request.City,
                         Number = request.Number,
                         AvailableTimes = request.AvailableTimes,
+                        PaymentMethods = request.PaymentMethods,
                     };
 
                     await _barberShopInfoService.CreateBarberShop(barberShopInfo);

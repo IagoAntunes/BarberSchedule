@@ -20,7 +20,7 @@ namespace BarberSchedule.Services.BarberShop.Service
             _mapper = mapper;
         }
 
-        public async Task CreateBarberShopInfo(BarberShopInfoDto request)
+        public async Task CreateBarberShopInfo(CreateBarberShopInfoDto request)
         {
             var barberShopModel = _mapper.Map<BarberShopInfoModel>(request);
 
@@ -59,6 +59,20 @@ namespace BarberSchedule.Services.BarberShop.Service
             }
             return null;
         
+        }
+
+        public async Task<BarberShopInfoDto?> GetByUserIdBarberShopInfo(GetByUserIdBarberShopRequest request)
+        {
+            var barberShop = await _dbContext.BarberShopInfo
+                .Include(b => b.BarberShopPaymentMethods)
+                    .ThenInclude(bp => bp.PaymentMethod)
+                    .FirstOrDefaultAsync(x => x.UserId == request.UserId);
+
+            if (barberShop != null)
+            {
+                return _mapper.Map<BarberShopInfoDto>(barberShop);
+            }
+            return null;
         }
     }
 }

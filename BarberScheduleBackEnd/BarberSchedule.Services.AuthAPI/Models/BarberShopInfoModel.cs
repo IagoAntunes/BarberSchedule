@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BarberSchedule.Services.BarberShop.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BarberSchedule.Services.AuthAPI.Models
@@ -16,5 +17,6 @@ namespace BarberSchedule.Services.AuthAPI.Models
         public string Number { get; set; }
         public string Photo { get; set; }
         public string AvailableTimes { get; set; }
+        public ICollection<BarberShopPaymentMethodsModel> BarberShopPaymentMethods { get; set; }
     }
 }

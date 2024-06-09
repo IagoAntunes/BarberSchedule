@@ -13,7 +13,11 @@ namespace BarberSchedule.Services.AuthAPI
                 config =>
                 {
                     config.CreateMap<BarberShopInfoDto, BarberShopInfoModel>().ReverseMap();
+                    config.CreateMap<CreateBarberShopInfoDto, BarberShopInfoModel>().ReverseMap();
                     config.CreateMap<PaymentMethodDto, PaymentMethodModel>().ReverseMap();
+                    config.CreateMap<BarberShopInfoModel, BarberShopInfoDto>()
+                        .ForMember(dest => dest.PaymentMethods, opt => 
+                        opt.MapFrom(src => src.BarberShopPaymentMethods.Select(bpm => bpm.PaymentMethod)));
                 });
 
 

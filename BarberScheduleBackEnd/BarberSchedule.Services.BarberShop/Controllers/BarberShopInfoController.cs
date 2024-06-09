@@ -19,7 +19,7 @@ namespace BarberSchedule.Services.BarberShop.Controllers
         }
 
         [HttpPost("Create")]
-        public async Task<IActionResult> CreateBarberShopInfo([FromBody] BarberShopInfoDto request)
+        public async Task<IActionResult> CreateBarberShopInfo([FromBody] CreateBarberShopInfoDto request)
         {
             await _barberShopInfoService.CreateBarberShopInfo(request);
 
@@ -38,6 +38,17 @@ namespace BarberSchedule.Services.BarberShop.Controllers
         {
             var result = await _barberShopInfoService.GetByIdBarberShopInfo(request);
             if(result == null)
+            {
+                _response.IsSuccesful = false;
+                return BadRequest(_response);
+            }
+            return Ok(result);
+        }
+        [HttpGet("GetByUserId")]
+        public async Task<IActionResult> GetByUserIdBarberShopInfo([FromQuery] GetByUserIdBarberShopRequest request)
+        {
+            var result = await _barberShopInfoService.GetByUserIdBarberShopInfo(request);
+            if (result == null)
             {
                 _response.IsSuccesful = false;
                 return BadRequest(_response);

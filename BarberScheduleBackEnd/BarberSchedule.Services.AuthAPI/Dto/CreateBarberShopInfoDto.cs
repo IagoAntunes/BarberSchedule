@@ -1,9 +1,13 @@
-﻿namespace BarberSchedule.Services.AuthAPI.Dto
+﻿using BarberSchedule.Services.BarberShop.Models;
+
+namespace BarberSchedule.Services.BarberShop.Dto
 {
-    public class RegisterBarberShopRequestDTO : BaseRegisterUserRequestDto
+    public class CreateBarberShopInfoDto
     {
+                public string UserId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string PhoneNumber { get; set; }
         public string State { get; set; }
         public string City { get; set; }
         public string Number { get; set; }

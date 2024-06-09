@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "IDoKKFW48Vo4iYBN3IL1hFYV5JfzCyok1Pc8ZxxivMI=",
+  "Source": "BarberSchedule.Services.AuthAPI",
+  "BasePath": "_content/BarberSchedule.Services.AuthAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

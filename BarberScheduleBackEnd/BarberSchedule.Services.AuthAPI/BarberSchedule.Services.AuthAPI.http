@@ -1,0 +1,6 @@
+@BarberSchedule.Services.AuthAPI_HostAddress = http://localhost:5187
+
+GET {{BarberSchedule.Services.AuthAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

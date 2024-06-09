@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\BarberSchedule.Services.BarberShop.props" />
+</Project>

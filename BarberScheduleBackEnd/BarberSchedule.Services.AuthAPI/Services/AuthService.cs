@@ -68,7 +68,7 @@ namespace BarberSchedule.Services.AuthAPI.Services
                 AvailableTimes = barberShopInfo.AvailableTimes,
                 PaymentMethods = barberShopInfo.PaymentMethods,
             };
-            var token = _jwtTokenService.CreateToken(barberShop);
+            var token = await _jwtTokenService.CreateToken(barberShop);
             var response = new LoginBarberShopResponseDto()
             {
                 BarberShop = barberShopDto,
@@ -101,7 +101,7 @@ namespace BarberSchedule.Services.AuthAPI.Services
                 PhoneNumber = user.PhoneNumber,
                 Photo = user.Photo,
             };
-            var token = _jwtTokenService.CreateToken(user);
+            var token = await _jwtTokenService.CreateToken(user);
             var response = new LoginResponseUserDto()
             {
                 User = userDto,

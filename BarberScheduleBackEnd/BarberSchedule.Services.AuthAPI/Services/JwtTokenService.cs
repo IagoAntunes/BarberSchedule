@@ -1,5 +1,7 @@
-﻿using BarberSchedule.Services.AuthAPI.Models;
+﻿using BarberSchedule.Services.AuthAPI.Migrations;
+using BarberSchedule.Services.AuthAPI.Models;
 using BarberSchedule.Services.AuthAPI.Services.Interface;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -11,13 +13,17 @@ namespace BarberSchedule.Services.AuthAPI.Services
     public class JwtTokenService : IJwtTokenService
     {
         private readonly JwtOptionsModel _jwtOptions;
+        private readonly UserManager<UserModel> _userManager;
 
-        public JwtTokenService(IOptions<JwtOptionsModel> jwtOptions)
+        public JwtTokenService(
+            IOptions<JwtOptionsModel> jwtOptions,
+            UserManager<UserModel> userManager)
         {
             _jwtOptions = jwtOptions.Value;
+            _userManager = userManager;
         }
 
-        public string CreateToken(UserModel user)
+        public async Task<string> CreateToken(UserModel user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
@@ -28,6 +34,11 @@ namespace BarberSchedule.Services.AuthAPI.Services
                 new Claim(JwtRegisteredClaimNames.Sub,user.Id),
                 new Claim(JwtRegisteredClaimNames.Name,user.UserName),
             };
+            var userRoles = await _userManager.GetRolesAsync(user);
+            foreach (var role in userRoles)
+            {
+                claimList.Add(new Claim(ClaimTypes.Role, role));
+            }
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

@@ -1,11 +1,13 @@
 ﻿using BarberSchedule.Services.AuthAPI.Dto;
 using BarberSchedule.Services.BarberShop.Dto;
 using BarberSchedule.Services.BarberShop.Service.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BarberSchedule.Services.BarberShop.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class BarberShopInfoController : ControllerBase
     {
@@ -17,7 +19,6 @@ namespace BarberSchedule.Services.BarberShop.Controllers
             _barberShopInfoService = barberShopInfoService;
             _response = new ResponseDto();
         }
-
         [HttpPost("Create")]
         public async Task<IActionResult> CreateBarberShopInfo([FromBody] CreateBarberShopInfoDto request)
         {
@@ -25,7 +26,7 @@ namespace BarberSchedule.Services.BarberShop.Controllers
 
             return Ok();
         }
-
+        [Authorize(Roles = "CLIENT")]
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllBarberShopInfo()
         {

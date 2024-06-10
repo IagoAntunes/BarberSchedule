@@ -4,6 +4,6 @@ namespace BarberSchedule.Services.AuthAPI.Services.Interface
 {
     public interface IJwtTokenService
     {
-        string CreateToken(UserModel user);
+        Task<string> CreateToken(UserModel user);
     }
 }

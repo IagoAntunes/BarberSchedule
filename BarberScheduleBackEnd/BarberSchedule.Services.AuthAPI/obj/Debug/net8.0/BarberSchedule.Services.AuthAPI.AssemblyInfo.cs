@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BarberSchedule.Services.AuthAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e473cf560a1d63f7de6d568df47fdd1530cd5c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0df9fbbd454cf91925f6f961f96eecaa56bc358e")]
 [assembly: System.Reflection.AssemblyProductAttribute("BarberSchedule.Services.AuthAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BarberSchedule.Services.AuthAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

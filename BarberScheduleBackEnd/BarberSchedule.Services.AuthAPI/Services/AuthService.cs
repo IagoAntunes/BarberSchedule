@@ -14,17 +14,20 @@ namespace BarberSchedule.Services.AuthAPI.Services
         private readonly UserManager<UserModel> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IBarberShopInfoService _barberShopInfoService;
+        private readonly IJwtTokenService _jwtTokenService;
 
         public AuthService(
             AuthDbContext context, 
             UserManager<UserModel> userManager,
             RoleManager<IdentityRole> roleManager,
-            IBarberShopInfoService barberShopInfoService)
+            IBarberShopInfoService barberShopInfoService,
+            IJwtTokenService jwtTokenService)
         {
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
             _barberShopInfoService = barberShopInfoService;
+            _jwtTokenService = jwtTokenService;
         }
 
         public async Task AsignRole(string roleName, UserModel user)
@@ -65,11 +68,11 @@ namespace BarberSchedule.Services.AuthAPI.Services
                 AvailableTimes = barberShopInfo.AvailableTimes,
                 PaymentMethods = barberShopInfo.PaymentMethods,
             };
-
+            var token = _jwtTokenService.CreateToken(barberShop);
             var response = new LoginBarberShopResponseDto()
             {
                 BarberShop = barberShopDto,
-                Token = ""
+                Token = token
             };
 
             return response;
@@ -98,11 +101,11 @@ namespace BarberSchedule.Services.AuthAPI.Services
                 PhoneNumber = user.PhoneNumber,
                 Photo = user.Photo,
             };
-
+            var token = _jwtTokenService.CreateToken(user);
             var response = new LoginResponseUserDto()
             {
                 User = userDto,
-                Token = "",
+                Token = token,
             };
 
             return response;

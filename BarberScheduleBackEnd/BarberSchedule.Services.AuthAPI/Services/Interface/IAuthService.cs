@@ -8,5 +8,7 @@ namespace BarberSchedule.Services.AuthAPI.Services.Interface
         Task<string> RegisterClient(RegisterClientRequestDto request);
         Task<string> RegisterBarberShop(RegisterBarberShopRequestDTO request);
         Task<LoginBarberShopResponseDto> LoginBarberShop(LoginBarberShopRequestDto request);
+
+        Task<string> GetUserToken(string userId);
     }
 }

@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "1AO3FMT9JB44uCg39PQEgAMUo5EVBAD+iJrp/KmG69U=",
+  "Hash": "o68qlYngw1LMSkcUgQjIzELrfDKsal0lhoEJaEcQJNY=",
   "Source": "BarberSchedule.Services.BarberShop",
   "BasePath": "_content/BarberSchedule.Services.BarberShop",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "BarberSchedule.Services.BarberShop\\wwwroot",
+      "Source": "BarberSchedule.Services.BarberShop",
+      "ContentRoot": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\wwwroot\\",
+      "BasePath": "_content/BarberSchedule.Services.BarberShop",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\wwwroot\\BarberShopImages\\14caca.png",
+      "SourceId": "BarberSchedule.Services.BarberShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\wwwroot\\",
+      "BasePath": "_content/BarberSchedule.Services.BarberShop",
+      "RelativePath": "BarberShopImages/14caca.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BarberShopImages\\14caca.png"
+    }
+  ]
 }

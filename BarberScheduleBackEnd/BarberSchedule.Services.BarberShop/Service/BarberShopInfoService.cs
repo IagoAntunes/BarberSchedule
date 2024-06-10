@@ -4,6 +4,7 @@ using BarberSchedule.Services.BarberShop.Dto;
 using BarberSchedule.Services.BarberShop.Models;
 using BarberSchedule.Services.BarberShop.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace BarberSchedule.Services.BarberShop.Service
 {
@@ -26,6 +27,22 @@ namespace BarberSchedule.Services.BarberShop.Service
 
             var addedBarberShop = await _dbContext.BarberShopInfo.AddAsync(barberShopModel);
             await _dbContext.SaveChangesAsync();
+
+            if (!string.IsNullOrEmpty(request.Photo))
+            {
+                var b64 = "";
+                var dataPrefixPattern = @"^data:image\/[a-zA-Z]+;base64,";
+                b64 = Regex.Replace(request.Photo, dataPrefixPattern, string.Empty);
+                byte[] imageBytes = Convert.FromBase64String(b64);
+
+                string fileName = barberShopModel.Id +  barberShopModel.Name + ".png";
+                string filePath = @"wwwroot\BarberShopImages\" + fileName;
+                // Caminho completo do arquivo
+                var filePathDirectory = Path.Combine(Directory.GetCurrentDirectory(), filePath);
+
+                // Salvar o arquivo
+                await System.IO.File.WriteAllBytesAsync(filePathDirectory, imageBytes);
+            }
 
             foreach (var paymentMethod in request.PaymentMethods)
             {

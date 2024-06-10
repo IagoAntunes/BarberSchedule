@@ -6,7 +6,7 @@ namespace BarberSchedule.Services.AuthAPI.Services.Interface
     public interface IBarberShopInfoService
     {
 
-        Task<bool> CreateBarberShop(CreateBarberShopInfoDto barberShopInfoModel);
-        Task<BarberShopInfoDto?> GetBarberShopInfo(UserModel barberShop);
+        Task<bool> CreateBarberShop(CreateBarberShopInfoDto barberShopInfoModel,string token);
+        Task<BarberShopInfoDto?> GetBarberShopInfo(UserModel barberShop,string token);
     }   
 }

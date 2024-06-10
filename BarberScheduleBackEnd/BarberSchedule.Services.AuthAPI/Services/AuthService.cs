@@ -5,6 +5,7 @@ using BarberSchedule.Services.AuthAPI.Models;
 using BarberSchedule.Services.AuthAPI.Services.Interface;
 using BarberSchedule.Services.BarberShop.Dto;
 using Microsoft.AspNetCore.Identity;
+using System.Text.RegularExpressions;
 
 namespace BarberSchedule.Services.AuthAPI.Services
 {
@@ -39,6 +40,21 @@ namespace BarberSchedule.Services.AuthAPI.Services
             await _userManager.AddToRoleAsync(user, roleName);
         }
 
+        public async Task<string> GetUserToken(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if(user != null)
+            {
+                var token =  await _userManager.GetAuthenticationTokenAsync(user,"Bearer","JWT");
+                if (string.IsNullOrEmpty(token))
+                {
+                    token =  await _jwtTokenService.CreateToken(user);
+                }
+                return token;
+            }
+            return "";
+        }
+
         public async Task<LoginBarberShopResponseDto> LoginBarberShop(LoginBarberShopRequestDto request)
         {
             var barberShop = _context.Users.FirstOrDefault(u => u.Email == request.Email);
@@ -53,7 +69,7 @@ namespace BarberSchedule.Services.AuthAPI.Services
                 new LoginBarberShopResponseDto();
             }
 
-            var barberShopInfo = await _barberShopInfoService.GetBarberShopInfo(barberShop);
+            var barberShopInfo = await _barberShopInfoService.GetBarberShopInfo(barberShop,request.Password);
 
             var barberShopDto = new BarberShopInfoDto()
             {
@@ -69,6 +85,8 @@ namespace BarberSchedule.Services.AuthAPI.Services
                 PaymentMethods = barberShopInfo.PaymentMethods,
             };
             var token = await _jwtTokenService.CreateToken(barberShop);
+
+            await _userManager.SetAuthenticationTokenAsync(barberShop, "Bearer", "JWT", token);
             var response = new LoginBarberShopResponseDto()
             {
                 BarberShop = barberShopDto,
@@ -91,9 +109,7 @@ namespace BarberSchedule.Services.AuthAPI.Services
             {
                 return new LoginResponseUserDto();
             }
-            //TODO JWT GENERATOR
-
-            var userDto = new UserDto()
+        var userDto = new UserDto()
             {
                 Id = user.Id,
                 Email = user.Email,
@@ -102,6 +118,9 @@ namespace BarberSchedule.Services.AuthAPI.Services
                 Photo = user.Photo,
             };
             var token = await _jwtTokenService.CreateToken(user);
+
+            await _userManager.SetAuthenticationTokenAsync(user, "Bearer","JWT",token);
+
             var response = new LoginResponseUserDto()
             {
                 User = userDto,
@@ -147,8 +166,8 @@ namespace BarberSchedule.Services.AuthAPI.Services
                         AvailableTimes = request.AvailableTimes,
                         PaymentMethods = request.PaymentMethods,
                     };
-
-                    await _barberShopInfoService.CreateBarberShop(barberShopInfo);
+                    var token = await GetUserToken(barberShopInfo.UserId);
+                    await _barberShopInfoService.CreateBarberShop(barberShopInfo, token);
                     
 
                     return "";
@@ -184,6 +203,21 @@ namespace BarberSchedule.Services.AuthAPI.Services
                     if(userToReturn != null)
                     {
                         await AsignRole(request.RoleName,userToReturn);
+                    }
+                    if (!string.IsNullOrEmpty(request.Photo))
+                    {
+                        var b64 = "";
+                        var dataPrefixPattern = @"^data:image\/[a-zA-Z]+;base64,";
+                        b64 = Regex.Replace(request.Photo, dataPrefixPattern, string.Empty);
+                        byte[] imageBytes = Convert.FromBase64String(b64);
+
+                        string fileName = user.Id + user.UserName + ".png";
+                        string filePath = @"wwwroot\UserImages\" + fileName;
+                        // Caminho completo do arquivo
+                        var filePathDirectory = Path.Combine(Directory.GetCurrentDirectory(), filePath);
+
+                        // Salvar o arquivo
+                        await System.IO.File.WriteAllBytesAsync(filePathDirectory, imageBytes);
                     }
 
                     UserDto userDto = new UserDto()

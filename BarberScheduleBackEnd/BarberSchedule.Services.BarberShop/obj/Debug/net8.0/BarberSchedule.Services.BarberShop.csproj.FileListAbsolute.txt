@@ -137,3 +137,4 @@ C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Ser
 C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.BarberShop\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.BarberShop\bin\Debug\net8.0\AutoMapper.dll
 C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.BarberShop\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.BarberShop\bin\Debug\net8.0\BarberSchedule.Services.BarberShop.staticwebassets.runtime.json

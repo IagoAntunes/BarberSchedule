@@ -4,7 +4,7 @@ namespace BarberSchedule.Services.BarberShop.Dto
 {
     public class CreateBarberShopInfoDto
     {
-                public string UserId { get; set; }
+        public string UserId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string PhoneNumber { get; set; }

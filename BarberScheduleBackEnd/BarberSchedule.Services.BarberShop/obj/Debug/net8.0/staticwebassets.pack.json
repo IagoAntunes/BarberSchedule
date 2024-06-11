@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\wwwroot\\BarberShopImages\\14caca.png",
+      "PackagePath": "staticwebassets\\BarberShopImages\\14caca.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BarberSchedule.Services.BarberShop.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BarberSchedule.Services.BarberShop.props",
+      "PackagePath": "build\\BarberSchedule.Services.BarberShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BarberSchedule.Services.BarberShop.props",
+      "PackagePath": "buildMultiTargeting\\BarberSchedule.Services.BarberShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BarberSchedule.Services.BarberShop.props",
+      "PackagePath": "buildTransitive\\BarberSchedule.Services.BarberShop.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

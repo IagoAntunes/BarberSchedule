@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "fJv0AqotEmpDLK1mMJ7mhXHKNJO3uwYGNX7b9vZU7R0=",
+  "Source": "BarberSchedule.Services.AuthAPI",
+  "BasePath": "_content/BarberSchedule.Services.AuthAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BarberSchedule.Services.AuthAPI\\wwwroot",
+      "Source": "BarberSchedule.Services.AuthAPI",
+      "ContentRoot": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.AuthAPI\\wwwroot\\",
+      "BasePath": "_content/BarberSchedule.Services.AuthAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

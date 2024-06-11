@@ -1,12 +1,75 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.barbershop\\service\\barbershopinfoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|solutionrelative:barberschedule.services.barbershop\\service\\barbershopinfoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D119EE75-8E43-43BF-890D-D0C07767701F}|BarberSchedule.Services.AuthAPI\\BarberSchedule.Services.AuthAPI.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.authapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D119EE75-8E43-43BF-890D-D0C07767701F}|BarberSchedule.Services.AuthAPI\\BarberSchedule.Services.AuthAPI.csproj|solutionrelative:barberschedule.services.authapi\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D119EE75-8E43-43BF-890D-D0C07767701F}|BarberSchedule.Services.AuthAPI\\BarberSchedule.Services.AuthAPI.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.authapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D119EE75-8E43-43BF-890D-D0C07767701F}|BarberSchedule.Services.AuthAPI\\BarberSchedule.Services.AuthAPI.csproj|solutionrelative:barberschedule.services.authapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BarberShopInfoService.cs",
+              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Service\\BarberShopInfoService.cs",
+              "RelativeDocumentMoniker": "BarberSchedule.Services.BarberShop\\Service\\BarberShopInfoService.cs",
+              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Service\\BarberShopInfoService.cs",
+              "RelativeToolTip": "BarberSchedule.Services.BarberShop\\Service\\BarberShopInfoService.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowCUAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T23:24:00.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.AuthAPI\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "BarberSchedule.Services.AuthAPI\\Services\\AuthService.cs",
+              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.AuthAPI\\Services\\AuthService.cs",
+              "RelativeToolTip": "BarberSchedule.Services.AuthAPI\\Services\\AuthService.cs",
+              "ViewState": "AQIAALsAAAAAAAAAAAAmwNUAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T20:17:36.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.AuthAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "BarberSchedule.Services.AuthAPI\\appsettings.json",
+              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.AuthAPI\\appsettings.json",
+              "RelativeToolTip": "BarberSchedule.Services.AuthAPI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-10T19:48:30.713Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

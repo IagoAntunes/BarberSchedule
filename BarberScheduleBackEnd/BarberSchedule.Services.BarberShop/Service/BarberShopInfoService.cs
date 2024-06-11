@@ -35,7 +35,7 @@ namespace BarberSchedule.Services.BarberShop.Service
                 b64 = Regex.Replace(request.Photo, dataPrefixPattern, string.Empty);
                 byte[] imageBytes = Convert.FromBase64String(b64);
 
-                string fileName = barberShopModel.Id +  barberShopModel.Name + ".png";
+                string fileName = barberShopModel.UserId +  barberShopModel.Name + ".png";
                 string filePath = @"wwwroot\BarberShopImages\" + fileName;
                 // Caminho completo do arquivo
                 var filePathDirectory = Path.Combine(Directory.GetCurrentDirectory(), filePath);

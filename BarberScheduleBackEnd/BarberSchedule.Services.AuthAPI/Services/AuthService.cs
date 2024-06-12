@@ -40,19 +40,15 @@ namespace BarberSchedule.Services.AuthAPI.Services
             await _userManager.AddToRoleAsync(user, roleName);
         }
 
-        public async Task<string> GetUserToken(string userId)
+        public async Task<string> GetUserToken(UserModel userModel)
         {
-            var user = await _userManager.FindByIdAsync(userId);
-            if(user != null)
+            var token =  await _userManager.GetAuthenticationTokenAsync(userModel, "Bearer","JWT");
+            if (string.IsNullOrEmpty(token))
             {
-                var token =  await _userManager.GetAuthenticationTokenAsync(user,"Bearer","JWT");
-                if (string.IsNullOrEmpty(token))
-                {
-                    token =  await _jwtTokenService.CreateToken(user);
-                }
-                return token;
+                token =  await _jwtTokenService.CreateToken(userModel);
+                await _userManager.SetAuthenticationTokenAsync(userModel, "Bearer", "JWT", token);
             }
-            return "";
+            return token;
         }
 
         public async Task<LoginBarberShopResponseDto> LoginBarberShop(LoginBarberShopRequestDto request)
@@ -68,8 +64,8 @@ namespace BarberSchedule.Services.AuthAPI.Services
             {
                 new LoginBarberShopResponseDto();
             }
-
-            var barberShopInfo = await _barberShopInfoService.GetBarberShopInfo(barberShop,request.Password);
+            var token = await GetUserToken(barberShop);
+            var barberShopInfo = await _barberShopInfoService.GetBarberShopInfo(barberShop, token);
 
             var barberShopDto = new BarberShopInfoDto()
             {
@@ -84,9 +80,6 @@ namespace BarberSchedule.Services.AuthAPI.Services
                 AvailableTimes = barberShopInfo.AvailableTimes,
                 PaymentMethods = barberShopInfo.PaymentMethods,
             };
-            var token = await _jwtTokenService.CreateToken(barberShop);
-
-            await _userManager.SetAuthenticationTokenAsync(barberShop, "Bearer", "JWT", token);
             var response = new LoginBarberShopResponseDto()
             {
                 BarberShop = barberShopDto,
@@ -166,7 +159,7 @@ namespace BarberSchedule.Services.AuthAPI.Services
                         AvailableTimes = request.AvailableTimes,
                         PaymentMethods = request.PaymentMethods,
                     };
-                    var token = await GetUserToken(barberShopInfo.UserId);
+                    var token = await GetUserToken(userToReturn);
                     await _barberShopInfoService.CreateBarberShop(barberShopInfo, token);
                     
 

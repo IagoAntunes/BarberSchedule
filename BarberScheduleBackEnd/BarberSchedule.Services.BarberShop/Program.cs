@@ -14,8 +14,8 @@ var barberShopConnectionString = builder.Configuration.GetConnectionString("Barb
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 
 
-builder.Services.AddControllers();
 builder.Services.AddSingleton(mapper);
+builder.Services.AddControllers();
 builder.Services.AddAuthorization();
 builder.Services.AddScoped<IBarberShopInfoService,BarberShopInfoService>();
 builder.Services.AddScoped<IPaymentMethodsService,PaymentMethodsService>();

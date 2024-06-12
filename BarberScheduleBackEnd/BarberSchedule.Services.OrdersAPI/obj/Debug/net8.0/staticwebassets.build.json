@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "9DXXx8uOtMUGT3ifwAkA+aDpGDmJ21MJzMWfic3A6sI=",
+  "Source": "BarberSchedule.Services.OrdersAPI",
+  "BasePath": "_content/BarberSchedule.Services.OrdersAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -13,6 +13,7 @@ namespace BarberSchedule.Services.BarberShop.Dto
         public string Number { get; set; }
         public string Photo { get; set; }
         public string AvailableTimes { get; set; }
+        public double Price { get; set; }
         public ICollection<int> PaymentMethods { get; set; }
     }
 }

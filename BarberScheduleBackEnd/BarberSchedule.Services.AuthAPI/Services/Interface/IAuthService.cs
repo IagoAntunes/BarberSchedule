@@ -1,4 +1,5 @@
 ﻿using BarberSchedule.Services.AuthAPI.Dto;
+using BarberSchedule.Services.AuthAPI.Models;
 
 namespace BarberSchedule.Services.AuthAPI.Services.Interface
 {
@@ -9,6 +10,6 @@ namespace BarberSchedule.Services.AuthAPI.Services.Interface
         Task<string> RegisterBarberShop(RegisterBarberShopRequestDTO request);
         Task<LoginBarberShopResponseDto> LoginBarberShop(LoginBarberShopRequestDto request);
 
-        Task<string> GetUserToken(string userId);
+        Task<string> GetUserToken(UserModel userModel);
     }
 }

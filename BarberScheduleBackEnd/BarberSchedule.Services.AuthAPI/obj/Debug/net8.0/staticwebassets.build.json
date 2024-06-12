@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fJv0AqotEmpDLK1mMJ7mhXHKNJO3uwYGNX7b9vZU7R0=",
+  "Hash": "vC3RJ8r8FTkb0XH8CJJ+zxmnwCFlqB8W5SAURCprbmA=",
   "Source": "BarberSchedule.Services.AuthAPI",
   "BasePath": "_content/BarberSchedule.Services.AuthAPI",
   "Mode": "Default",
@@ -15,5 +15,25 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.AuthAPI\\wwwroot\\UserImages\\d324286d-d270-4762-a6e8-c668f7671d7dpedro.png",
+      "SourceId": "BarberSchedule.Services.AuthAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.AuthAPI\\wwwroot\\",
+      "BasePath": "_content/BarberSchedule.Services.AuthAPI",
+      "RelativePath": "UserImages/d324286d-d270-4762-a6e8-c668f7671d7dpedro.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UserImages\\d324286d-d270-4762-a6e8-c668f7671d7dpedro.png"
+    }
+  ]
 }

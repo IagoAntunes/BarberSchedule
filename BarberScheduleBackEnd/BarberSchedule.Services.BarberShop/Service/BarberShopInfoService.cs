@@ -68,7 +68,10 @@ namespace BarberSchedule.Services.BarberShop.Service
 
         public async Task<BarberShopInfoDto?> GetByIdBarberShopInfo(GetBarberShopInfoRequest request)
         {
-            var barberShop = await _dbContext.BarberShopInfo.FirstOrDefaultAsync(x => x.Id == request.BarberShopId);
+            var barberShop = await _dbContext.BarberShopInfo
+                .Include(b => b.BarberShopPaymentMethods)
+                    .ThenInclude(bp => bp.PaymentMethod)
+                    .FirstOrDefaultAsync(x => x.Id == request.BarberShopId);
             
             if(barberShop != null)
             {

@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.AuthAPI\\wwwroot\\UserImages\\d324286d-d270-4762-a6e8-c668f7671d7dpedro.png",
+      "PackagePath": "staticwebassets\\UserImages\\d324286d-d270-4762-a6e8-c668f7671d7dpedro.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BarberSchedule.Services.AuthAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BarberSchedule.Services.AuthAPI.props",
+      "PackagePath": "build\\BarberSchedule.Services.AuthAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BarberSchedule.Services.AuthAPI.props",
+      "PackagePath": "buildMultiTargeting\\BarberSchedule.Services.AuthAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BarberSchedule.Services.AuthAPI.props",
+      "PackagePath": "buildTransitive\\BarberSchedule.Services.AuthAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

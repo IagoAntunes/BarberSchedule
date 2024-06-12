@@ -40,6 +40,12 @@ namespace BarberSchedule.Services.AuthAPI.Services
             await _userManager.AddToRoleAsync(user, roleName);
         }
 
+        public async Task<string> GetEmailByUser(string userId)
+        {
+            var user = _userManager.FindByIdAsync(userId).Result;
+            return user.Email;
+        }
+
         public async Task<string> GetUserToken(UserModel userModel)
         {
             var token =  await _userManager.GetAuthenticationTokenAsync(userModel, "Bearer","JWT");

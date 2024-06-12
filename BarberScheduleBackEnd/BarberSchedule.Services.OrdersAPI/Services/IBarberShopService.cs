@@ -1,4 +1,5 @@
 ﻿using BarberSchedule.Services.OrdersAPI.Dto;
+using BarberSchedule.Services.OrdersAPI.Models;
 
 namespace BarberSchedule.Services.OrdersAPI.Services
 {
@@ -6,5 +7,6 @@ namespace BarberSchedule.Services.OrdersAPI.Services
     {
 
         Task<BarberShopInfoDto?> GetBarberShopById(string barberShopId, string token);
+        Task<string> GetUserModelById(string userId, string token);
     }
 }

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BarberSchedule.Services.EmailAPI.props" />
+</Project>

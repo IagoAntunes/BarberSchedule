@@ -11,5 +11,6 @@ namespace BarberSchedule.Services.AuthAPI.Services.Interface
         Task<LoginBarberShopResponseDto> LoginBarberShop(LoginBarberShopRequestDto request);
 
         Task<string> GetUserToken(UserModel userModel);
+        Task<string> GetEmailByUser(string userId);
     }
 }

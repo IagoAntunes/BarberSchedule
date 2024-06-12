@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.barbershop\\service\\paymentmethodsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|solutionrelative:barberschedule.services.barbershop\\service\\paymentmethodsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.barbershop\\mappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79C94CAD-FD56-4B7B-874D-F57F3EA0B3A5}|BarberSchedule.Services.BarberShop\\BarberSchedule.Services.BarberShop.csproj|solutionrelative:barberschedule.services.barbershop\\mappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{893C5BB8-020F-47C0-8DA2-E02F2EABB1B3}|BarberSchedule.Services.OrdersAPI\\BarberSchedule.Services.OrdersAPI.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.ordersapi\\mappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{893C5BB8-020F-47C0-8DA2-E02F2EABB1B3}|BarberSchedule.Services.OrdersAPI\\BarberSchedule.Services.OrdersAPI.csproj|solutionrelative:barberschedule.services.ordersapi\\mappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{893C5BB8-020F-47C0-8DA2-E02F2EABB1B3}|BarberSchedule.Services.OrdersAPI\\BarberSchedule.Services.OrdersAPI.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.ordersapi\\services\\ordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{893C5BB8-020F-47C0-8DA2-E02F2EABB1B3}|BarberSchedule.Services.OrdersAPI\\BarberSchedule.Services.OrdersAPI.csproj|solutionrelative:barberschedule.services.ordersapi\\services\\ordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{893C5BB8-020F-47C0-8DA2-E02F2EABB1B3}|BarberSchedule.Services.OrdersAPI\\BarberSchedule.Services.OrdersAPI.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.ordersapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{893C5BB8-020F-47C0-8DA2-E02F2EABB1B3}|BarberSchedule.Services.OrdersAPI\\BarberSchedule.Services.OrdersAPI.csproj|solutionrelative:barberschedule.services.ordersapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{893C5BB8-020F-47C0-8DA2-E02F2EABB1B3}|BarberSchedule.Services.OrdersAPI\\BarberSchedule.Services.OrdersAPI.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedule.services.ordersapi\\dto\\getorderresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{893C5BB8-020F-47C0-8DA2-E02F2EABB1B3}|BarberSchedule.Services.OrdersAPI\\BarberSchedule.Services.OrdersAPI.csproj|solutionrelative:barberschedule.services.ordersapi\\dto\\getorderresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CFE93DF-7428-4D25-8525-01E9D3F033D8}|BarberScheduleBackEnd.MessageBus\\BarberSchedule.MessageBus.csproj|c:\\iagoferreira\\projetos\\barberschedule\\barberschedulebackend\\barberschedulebackend.messagebus\\messagebus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CFE93DF-7428-4D25-8525-01E9D3F033D8}|BarberScheduleBackEnd.MessageBus\\BarberSchedule.MessageBus.csproj|solutionrelative:barberschedulebackend.messagebus\\messagebus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,66 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MappingConfig.cs",
-              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\MappingConfig.cs",
-              "RelativeDocumentMoniker": "BarberSchedule.Services.BarberShop\\MappingConfig.cs",
-              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\MappingConfig.cs",
-              "RelativeToolTip": "BarberSchedule.Services.BarberShop\\MappingConfig.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABJAAAA",
+              "Title": "GetOrderResponseDto.cs",
+              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.OrdersAPI\\Dto\\GetOrderResponseDto.cs",
+              "RelativeDocumentMoniker": "BarberSchedule.Services.OrdersAPI\\Dto\\GetOrderResponseDto.cs",
+              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.OrdersAPI\\Dto\\GetOrderResponseDto.cs",
+              "RelativeToolTip": "BarberSchedule.Services.OrdersAPI\\Dto\\GetOrderResponseDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T13:57:05.04Z",
+              "WhenOpened": "2024-06-12T23:36:09.003Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PaymentMethodsService.cs",
-              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Service\\PaymentMethodsService.cs",
-              "RelativeDocumentMoniker": "BarberSchedule.Services.BarberShop\\Service\\PaymentMethodsService.cs",
-              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.BarberShop\\Service\\PaymentMethodsService.cs",
-              "RelativeToolTip": "BarberSchedule.Services.BarberShop\\Service\\PaymentMethodsService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAnwBkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T13:56:24.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MappingConfig.cs",
-              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.OrdersAPI\\MappingConfig.cs",
-              "RelativeDocumentMoniker": "BarberSchedule.Services.OrdersAPI\\MappingConfig.cs",
-              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.OrdersAPI\\MappingConfig.cs",
-              "RelativeToolTip": "BarberSchedule.Services.OrdersAPI\\MappingConfig.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T13:44:27.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrdersService.cs",
-              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.OrdersAPI\\Services\\OrdersService.cs",
-              "RelativeDocumentMoniker": "BarberSchedule.Services.OrdersAPI\\Services\\OrdersService.cs",
-              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.OrdersAPI\\Services\\OrdersService.cs",
-              "RelativeToolTip": "BarberSchedule.Services.OrdersAPI\\Services\\OrdersService.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAmwC4AAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T13:44:13.89Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.OrdersAPI\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "BarberSchedule.Services.OrdersAPI\\Controllers\\OrdersController.cs",
               "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberSchedule.Services.OrdersAPI\\Controllers\\OrdersController.cs",
               "RelativeToolTip": "BarberSchedule.Services.OrdersAPI\\Controllers\\OrdersController.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAIwCYAAAAMAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAA4wDcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T13:44:03.122Z",
+              "WhenOpened": "2024-06-12T23:30:55.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MessageBus.cs",
+              "DocumentMoniker": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberScheduleBackEnd.MessageBus\\MessageBus.cs",
+              "RelativeDocumentMoniker": "BarberScheduleBackEnd.MessageBus\\MessageBus.cs",
+              "ToolTip": "C:\\iagoferreira\\projetos\\BarberSchedule\\BarberScheduleBackEnd\\BarberScheduleBackEnd.MessageBus\\MessageBus.cs",
+              "RelativeToolTip": "BarberScheduleBackEnd.MessageBus\\MessageBus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T23:32:38.096Z",
               "EditorCaption": ""
             }
           ]

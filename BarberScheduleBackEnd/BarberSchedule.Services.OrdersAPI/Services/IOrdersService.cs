@@ -4,7 +4,7 @@ namespace BarberSchedule.Services.OrdersAPI.Services
 {
     public interface IOrdersService
     {
-        Task<bool> CreateOrder(CreateOrderRequestDto request);
+        Task<GetOrderResponseDto?> CreateOrder(CreateOrderRequestDto request);
         Task<ICollection<GetOrderResponseDto>> GetOrderByUserId(string userId);
     }
 }

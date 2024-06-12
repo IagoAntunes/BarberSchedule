@@ -18,7 +18,7 @@ namespace BarberSchedule.Services.OrdersAPI.Services
             _dbCOntext = ordersDbContext;
             _mapper = mapper;
         }
-        public async Task<bool> CreateOrder(CreateOrderRequestDto request)
+        public async Task<GetOrderResponseDto?> CreateOrder(CreateOrderRequestDto request)
         {
             try
             {
@@ -29,11 +29,11 @@ namespace BarberSchedule.Services.OrdersAPI.Services
                 await _dbCOntext.Orders.AddAsync(orderModel);
                 await _dbCOntext.SaveChangesAsync();
 
-                return true;
+                return _mapper.Map<GetOrderResponseDto>(orderModel);
             }
             catch(Exception e)
             {
-                return false;
+                return null;
             }
         }
 

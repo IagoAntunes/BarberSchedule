@@ -1,4 +1,5 @@
-﻿using BarberSchedule.Services.AuthAPI.Dto;
+﻿using Azure;
+using BarberSchedule.Services.AuthAPI.Dto;
 using BarberSchedule.Services.AuthAPI.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -69,5 +70,17 @@ namespace BarberSchedule.Services.AuthAPI.Controllers
             }
             return Ok(result);
         }
+
+        [HttpGet("GetEmailByUser")]
+        public async Task<IActionResult> GetEmailByUser([FromQuery] string userId)
+        {
+            var result = await _authService.GetEmailByUser(userId);
+            var response = new GetEmailByUserResponseDto()
+            {
+                Email = result
+            };
+            return Ok(response);
+        }
+        
     }
 }

@@ -38,5 +38,20 @@ namespace BarberSchedule.Services.OrdersAPI.Services
             }
             return null;
         }
+
+        public async Task<string> GetUserModelById(string userId, string token)
+        {
+            var client = _httpClientFactory.CreateClient("BarberShopAPI");
+            var baseAuthApiUrl = _configuration["ServiceUrls:BaseAuthApiUrl"];
+
+            var response = await client.GetAsync($"{baseAuthApiUrl}/api/GetEmailByUser?userId={userId}");
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+                var email = JsonConvert.DeserializeObject<GetEmailByUserResponseDto?>(jsonResponse);
+                return email.Email;
+            }
+            return "";
+        }
     }
 }

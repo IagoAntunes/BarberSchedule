@@ -138,3 +138,9 @@ C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Ser
 C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.OrdersAPI\obj\Debug\net8.0\BarberSchedule.Services.OrdersAPI.genruntimeconfig.cache
 C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.OrdersAPI\obj\Debug\net8.0\ref\BarberSchedule.Services.OrdersAPI.dll
 C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.OrdersAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.OrdersAPI\bin\Debug\net8.0\Azure.Core.Amqp.dll
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.OrdersAPI\bin\Debug\net8.0\Azure.Messaging.ServiceBus.dll
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.OrdersAPI\bin\Debug\net8.0\Microsoft.Azure.Amqp.dll
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.OrdersAPI\bin\Debug\net8.0\System.ClientModel.dll
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.OrdersAPI\bin\Debug\net8.0\BarberSchedule.MessageBus.dll
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberSchedule.Services.OrdersAPI\bin\Debug\net8.0\BarberSchedule.MessageBus.pdb

@@ -1,6 +1,7 @@
 ﻿using BarberSchedule.Services.EmailAPI.Data;
 using BarberSchedule.Services.EmailAPI.Dto;
 using BarberSchedule.Services.EmailAPI.Models;
+using BarberSchedule.Services.EmailAPI.Service.Interfaces;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using System;

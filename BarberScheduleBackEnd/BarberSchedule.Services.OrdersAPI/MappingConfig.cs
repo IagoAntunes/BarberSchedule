@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BarberSchedule.Services.OrdersAPI.Dto;
+using BarberSchedule.Services.OrdersAPI.Dto.Request;
 using BarberSchedule.Services.OrdersAPI.Models;
 
 namespace BarberSchedule.Services.OrdersAPI

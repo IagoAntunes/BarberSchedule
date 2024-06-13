@@ -1,6 +1,7 @@
 using BarberSchedule.Services.EmailAPI.Data;
 using BarberSchedule.Services.EmailAPI.Messaging;
 using BarberSchedule.Services.EmailAPI.Service;
+using BarberSchedule.Services.EmailAPI.Service.Interfaces;
 using Mango.Services.EmailAPI.Extension;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;

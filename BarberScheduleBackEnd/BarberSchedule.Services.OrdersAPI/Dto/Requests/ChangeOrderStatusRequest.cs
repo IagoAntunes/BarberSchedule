@@ -1,4 +1,4 @@
-﻿namespace BarberSchedule.Services.OrdersAPI.Dto
+﻿namespace BarberSchedule.Services.OrdersAPI.Dto.Request
 {
     public class ChangeOrderStatusRequest
     {

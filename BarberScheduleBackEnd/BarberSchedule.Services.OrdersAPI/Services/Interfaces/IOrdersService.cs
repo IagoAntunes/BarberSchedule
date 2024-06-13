@@ -1,6 +1,7 @@
 ﻿using BarberSchedule.Services.OrdersAPI.Dto;
+using BarberSchedule.Services.OrdersAPI.Dto.Request;
 
-namespace BarberSchedule.Services.OrdersAPI.Services
+namespace BarberSchedule.Services.OrdersAPI.Services.Interfaces
 {
     public interface IOrdersService
     {

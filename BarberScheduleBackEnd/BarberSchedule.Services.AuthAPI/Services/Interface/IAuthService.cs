@@ -1,4 +1,5 @@
 ﻿using BarberSchedule.Services.AuthAPI.Dto;
+using BarberSchedule.Services.AuthAPI.Dto.Requests;
 using BarberSchedule.Services.AuthAPI.Models;
 
 namespace BarberSchedule.Services.AuthAPI.Services.Interface

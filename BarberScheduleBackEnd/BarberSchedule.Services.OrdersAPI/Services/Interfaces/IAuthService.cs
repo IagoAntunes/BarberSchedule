@@ -1,4 +1,4 @@
-﻿namespace BarberSchedule.Services.OrdersAPI.Services
+﻿namespace BarberSchedule.Services.OrdersAPI.Services.Interfaces
 {
     public interface IAuthService
     {

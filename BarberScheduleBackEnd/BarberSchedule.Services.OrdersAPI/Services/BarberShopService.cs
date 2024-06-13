@@ -1,5 +1,6 @@
 ﻿using BarberSchedule.Services.OrdersAPI.Dto;
 using BarberSchedule.Services.OrdersAPI.Models;
+using BarberSchedule.Services.OrdersAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;

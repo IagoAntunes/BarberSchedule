@@ -1,6 +1,7 @@
 ﻿using Azure.Core;
 using BarberSchedule.Services.AuthAPI.Data;
 using BarberSchedule.Services.AuthAPI.Dto;
+using BarberSchedule.Services.AuthAPI.Dto.Requests;
 using BarberSchedule.Services.AuthAPI.Models;
 using BarberSchedule.Services.AuthAPI.Services.Interface;
 using BarberSchedule.Services.BarberShop.Dto;

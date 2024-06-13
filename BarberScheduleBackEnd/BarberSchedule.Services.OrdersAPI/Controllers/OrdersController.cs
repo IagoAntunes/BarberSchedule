@@ -1,6 +1,8 @@
 ﻿using BarberSchedule.MessageBus;
 using BarberSchedule.Services.OrdersAPI.Dto;
-using BarberSchedule.Services.OrdersAPI.Services;
+using BarberSchedule.Services.OrdersAPI.Dto.QueryParameters;
+using BarberSchedule.Services.OrdersAPI.Dto.Request;
+using BarberSchedule.Services.OrdersAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

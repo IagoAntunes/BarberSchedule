@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BarberSchedule.Services.EmailAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99976bf53990cedfd508779abfe0bfb1e14591a0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d0f7b220bc2cebeeced585f1ac96ef276a7747a")]
 [assembly: System.Reflection.AssemblyProductAttribute("BarberSchedule.Services.EmailAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BarberSchedule.Services.EmailAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

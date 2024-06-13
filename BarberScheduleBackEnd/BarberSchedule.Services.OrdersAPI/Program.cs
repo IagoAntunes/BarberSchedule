@@ -3,6 +3,7 @@ using BarberSchedule.MessageBus;
 using BarberSchedule.Services.OrdersAPI;
 using BarberSchedule.Services.OrdersAPI.Data;
 using BarberSchedule.Services.OrdersAPI.Services;
+using BarberSchedule.Services.OrdersAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

@@ -1,4 +1,4 @@
-﻿namespace BarberSchedule.Services.AuthAPI.Dto
+﻿namespace BarberSchedule.Services.AuthAPI.Dto.Requests
 {
     public abstract class BaseRegisterUserRequestDto
     {

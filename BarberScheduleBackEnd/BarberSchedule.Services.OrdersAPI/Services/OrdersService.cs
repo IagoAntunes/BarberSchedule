@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using BarberSchedule.Services.OrdersAPI.Data;
 using BarberSchedule.Services.OrdersAPI.Dto;
+using BarberSchedule.Services.OrdersAPI.Dto.Request;
 using BarberSchedule.Services.OrdersAPI.Models;
+using BarberSchedule.Services.OrdersAPI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace BarberSchedule.Services.OrdersAPI.Services

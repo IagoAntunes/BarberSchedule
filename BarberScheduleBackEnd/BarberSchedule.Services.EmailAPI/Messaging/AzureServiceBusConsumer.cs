@@ -1,7 +1,7 @@
 ﻿
 using Azure.Messaging.ServiceBus;
 using BarberSchedule.Services.EmailAPI.Dto;
-using BarberSchedule.Services.EmailAPI.Service;
+using BarberSchedule.Services.EmailAPI.Service.Interfaces;
 using Newtonsoft.Json;
 using System.Text;
 

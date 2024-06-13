@@ -22,6 +22,7 @@ new Uri(builder.Configuration["ServiceUrls:BarberShopInfoAPI"]));
 builder.Services.AddSingleton(mapper);
 builder.Services.AddScoped<IMessageBus, MessageBus>();
 builder.Services.AddScoped<IBarberShopService, BarberShopService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IOrdersService,OrdersService>();
 builder.Services.AddDbContext<OrdersDbContext>(options =>
 {

@@ -79,6 +79,9 @@ namespace BarberSchedule.Services.AuthAPI.Controllers
             {
                 Email = result
             };
+            if (string.IsNullOrEmpty(response.Email)){
+                return BadRequest();
+            }
             return Ok(response);
         }
         

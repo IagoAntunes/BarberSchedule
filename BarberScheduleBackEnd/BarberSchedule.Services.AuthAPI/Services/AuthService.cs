@@ -43,6 +43,10 @@ namespace BarberSchedule.Services.AuthAPI.Services
         public async Task<string> GetEmailByUser(string userId)
         {
             var user = _userManager.FindByIdAsync(userId).Result;
+            if(user == null)
+            {
+                return "";
+            }
             return user.Email;
         }
 

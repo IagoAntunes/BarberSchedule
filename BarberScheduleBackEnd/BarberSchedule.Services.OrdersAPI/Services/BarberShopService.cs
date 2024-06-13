@@ -44,7 +44,7 @@ namespace BarberSchedule.Services.OrdersAPI.Services
             var client = _httpClientFactory.CreateClient("BarberShopAPI");
             var baseAuthApiUrl = _configuration["ServiceUrls:BaseAuthApiUrl"];
 
-            var response = await client.GetAsync($"{baseAuthApiUrl}/api/GetEmailByUser?userId={userId}");
+            var response = await client.GetAsync($"{baseAuthApiUrl}/api/auth/GetEmailByUser?userId={userId}");
             if (response.IsSuccessStatusCode)
             {
                 var jsonResponse = await response.Content.ReadAsStringAsync();

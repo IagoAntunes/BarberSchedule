@@ -14,6 +14,5 @@ namespace BarberSchedule.Services.OrdersAPI.Dto
 
         //Navigation
         public BarberShopInfoDto BarberShop { get; set; }
-        public UserModel UserModel { get; set; }
     }
 }

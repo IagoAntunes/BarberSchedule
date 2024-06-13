@@ -1,7 +1,9 @@
 using AutoMapper;
+using BarberSchedule.MessageBus;
 using BarberSchedule.Services.OrdersAPI;
 using BarberSchedule.Services.OrdersAPI.Data;
 using BarberSchedule.Services.OrdersAPI.Services;
+using BarberSchedule.Services.OrdersAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -19,7 +21,9 @@ IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddHttpClient("BarberShopInfo", u => u.BaseAddress =
 new Uri(builder.Configuration["ServiceUrls:BarberShopInfoAPI"]));
 builder.Services.AddSingleton(mapper);
+builder.Services.AddScoped<IMessageBus, MessageBus>();
 builder.Services.AddScoped<IBarberShopService, BarberShopService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IOrdersService,OrdersService>();
 builder.Services.AddDbContext<OrdersDbContext>(options =>
 {

@@ -1,0 +1,13 @@
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\bin\Debug\net8.0\BarberSchedule.MessageBus.deps.json
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\bin\Debug\net8.0\BarberSchedule.MessageBus.dll
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\bin\Debug\net8.0\BarberSchedule.MessageBus.pdb
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\obj\Debug\net8.0\BarberSchedule.MessageBus.csproj.AssemblyReference.cache
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\obj\Debug\net8.0\BarberSchedule.MessageBus.GeneratedMSBuildEditorConfig.editorconfig
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\obj\Debug\net8.0\BarberSchedule.MessageBus.AssemblyInfoInputs.cache
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\obj\Debug\net8.0\BarberSchedule.MessageBus.AssemblyInfo.cs
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\obj\Debug\net8.0\BarberSchedule.MessageBus.csproj.CoreCompileInputs.cache
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\obj\Debug\net8.0\BarberSchedule.MessageBus.sourcelink.json
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\obj\Debug\net8.0\BarberSchedule.MessageBus.dll
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\obj\Debug\net8.0\refint\BarberSchedule.MessageBus.dll
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\obj\Debug\net8.0\BarberSchedule.MessageBus.pdb
+C:\iagoferreira\projetos\BarberSchedule\BarberScheduleBackEnd\BarberScheduleBackEnd.MessageBus\obj\Debug\net8.0\ref\BarberSchedule.MessageBus.dll

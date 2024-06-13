@@ -1,6 +1,7 @@
 ﻿using Azure.Core;
 using BarberSchedule.Services.AuthAPI.Data;
 using BarberSchedule.Services.AuthAPI.Dto;
+using BarberSchedule.Services.AuthAPI.Dto.Requests;
 using BarberSchedule.Services.AuthAPI.Models;
 using BarberSchedule.Services.AuthAPI.Services.Interface;
 using BarberSchedule.Services.BarberShop.Dto;
@@ -38,6 +39,16 @@ namespace BarberSchedule.Services.AuthAPI.Services
                 _roleManager.CreateAsync(new IdentityRole(roleName)).GetAwaiter().GetResult();
             }
             await _userManager.AddToRoleAsync(user, roleName);
+        }
+
+        public async Task<string> GetEmailByUser(string userId)
+        {
+            var user = _userManager.FindByIdAsync(userId).Result;
+            if(user == null)
+            {
+                return "";
+            }
+            return user.Email;
         }
 
         public async Task<string> GetUserToken(UserModel userModel)

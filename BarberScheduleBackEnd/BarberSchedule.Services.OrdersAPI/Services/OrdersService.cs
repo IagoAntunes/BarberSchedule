@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using BarberSchedule.Services.OrdersAPI.Data;
 using BarberSchedule.Services.OrdersAPI.Dto;
+using BarberSchedule.Services.OrdersAPI.Dto.Request;
 using BarberSchedule.Services.OrdersAPI.Models;
+using BarberSchedule.Services.OrdersAPI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace BarberSchedule.Services.OrdersAPI.Services
@@ -18,7 +20,7 @@ namespace BarberSchedule.Services.OrdersAPI.Services
             _dbCOntext = ordersDbContext;
             _mapper = mapper;
         }
-        public async Task<bool> CreateOrder(CreateOrderRequestDto request)
+        public async Task<GetOrderResponseDto?> CreateOrder(CreateOrderRequestDto request)
         {
             try
             {
@@ -29,22 +31,57 @@ namespace BarberSchedule.Services.OrdersAPI.Services
                 await _dbCOntext.Orders.AddAsync(orderModel);
                 await _dbCOntext.SaveChangesAsync();
 
-                return true;
+                return _mapper.Map<GetOrderResponseDto>(orderModel);
             }
             catch(Exception e)
             {
-                return false;
+                return null;
             }
         }
 
-        public async Task<ICollection<GetOrderResponseDto>> GetOrderByUserId(string userId)
+        public async Task<ICollection<GetOrderResponseDto>> GetOrderByUserId(string userId,string? status)
         {
-            var barbersShop = await _dbCOntext.Orders
+            var ordersList = await _dbCOntext.Orders
                 .Where(x => x.UserId == userId)
                 .ToListAsync();
 
-            var barberShopDto = _mapper.Map<ICollection<GetOrderResponseDto>>(barbersShop);
+            if(status != null)
+            {
+                ordersList = ordersList.Where(x => x.Status.ToLower() == status.ToLower()).ToList();
+            }
+
+            var barberShopDto = _mapper.Map<ICollection<GetOrderResponseDto>>(ordersList);
             return barberShopDto;
+        }
+
+        public async  Task<GetOrderResponseDto?> ChangeOrderStatus(ChangeOrderStatusRequest request)
+        {
+            var order = _dbCOntext.Orders.FirstOrDefault(x => x.OrderId == request.OrderId);
+
+            if(order == null)
+            {
+                return null;
+            }
+
+            order.Status = request.NewStatus;
+            await _dbCOntext.SaveChangesAsync();
+            
+            return _mapper.Map<GetOrderResponseDto>(order);
+        }
+
+        public async Task<ICollection<GetOrderResponseDto>> GetOrdersByBarberShopId(object barberShopId, string? status)
+        {
+            var ordersList = await _dbCOntext.Orders
+                .Where(x => x.BarberShopId == barberShopId)
+                .ToListAsync();
+
+            if (status != null)
+            {
+                ordersList = ordersList.Where(x => x.Status.ToLower() == status.ToLower()).ToList();
+            }
+
+            var response = _mapper.Map<ICollection<GetOrderResponseDto>>(ordersList);
+            return response;
         }
     }
 }

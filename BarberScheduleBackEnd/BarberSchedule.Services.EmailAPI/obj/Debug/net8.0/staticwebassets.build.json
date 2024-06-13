@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "2LLt9JszQhIHuZwI5OWMXycm46RJ5RM1IZNQprJMpDQ=",
+  "Source": "BarberSchedule.Services.EmailAPI",
+  "BasePath": "_content/BarberSchedule.Services.EmailAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -3,6 +3,11 @@ import 'package:barberschedule_design_system/settings/style/app_text_style.dart'
 import 'package:flutter/material.dart';
 
 enum CFormFieldState {
+  enabled,
+  disabled,
+}
+
+enum CFormFieldStyle {
   emptyDefault,
   emptyActive,
   filledDefault,
@@ -24,6 +29,8 @@ class CFormField extends StatefulWidget {
     this.cFormFieldType = CFormFieldType.text,
     this.textInputType,
     this.validator,
+    this.cFormFieldState = CFormFieldState.enabled,
+    this.controller,
   });
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
@@ -31,20 +38,22 @@ class CFormField extends StatefulWidget {
   final IconData? prefixIcon;
   final CFormFieldType cFormFieldType;
   final TextInputType? textInputType;
+  final TextEditingController? controller;
+  final CFormFieldState cFormFieldState;
   @override
   State<CFormField> createState() => _CFormFieldState();
 }
 
 class _CFormFieldState extends State<CFormField> {
   FocusNode focusNode = FocusNode();
-  CFormFieldState cFormFieldState = CFormFieldState.emptyDefault;
-  final controller = TextEditingController();
-
+  CFormFieldStyle cFormFieldStyle = CFormFieldStyle.emptyDefault;
+  late TextEditingController controller;
   late ValueNotifier obscureText;
 
   @override
   void initState() {
     super.initState();
+    controller = widget.controller ?? TextEditingController();
     if (widget.cFormFieldType == CFormFieldType.password) {
       obscureText = ValueNotifier<bool>(true);
     } else {
@@ -53,13 +62,13 @@ class _CFormFieldState extends State<CFormField> {
 
     focusNode.addListener(() {
       if (focusNode.hasFocus && controller.text.isEmpty) {
-        cFormFieldState = CFormFieldState.emptyActive;
+        cFormFieldStyle = CFormFieldStyle.emptyActive;
       } else if (focusNode.hasFocus && controller.text.isNotEmpty) {
-        cFormFieldState = CFormFieldState.filledActive;
+        cFormFieldStyle = CFormFieldStyle.filledActive;
       } else if (!focusNode.hasFocus && controller.text.isEmpty) {
-        cFormFieldState = CFormFieldState.emptyDefault;
+        cFormFieldStyle = CFormFieldStyle.emptyDefault;
       } else if (!focusNode.hasFocus && controller.text.isNotEmpty) {
-        cFormFieldState = CFormFieldState.filledDefault;
+        cFormFieldStyle = CFormFieldStyle.filledDefault;
       }
     });
   }
@@ -73,6 +82,7 @@ class _CFormFieldState extends State<CFormField> {
       obscureText: obscureText.value,
       style: hintStyleByType(),
       keyboardType: _getKeyboardByType(),
+      enabled: widget.cFormFieldState != CFormFieldState.disabled,
       validator: (value) {
         String? result;
         if (widget.validator != null) {
@@ -80,11 +90,11 @@ class _CFormFieldState extends State<CFormField> {
         }
         if (result != null) {
           setState(() {
-            cFormFieldState = CFormFieldState.error;
+            cFormFieldStyle = CFormFieldStyle.error;
           });
         } else {
           setState(() {
-            cFormFieldState = CFormFieldState.filledDefault;
+            cFormFieldStyle = CFormFieldStyle.filledDefault;
           });
         }
         return result;
@@ -94,7 +104,7 @@ class _CFormFieldState extends State<CFormField> {
         hintStyle: hintStyleByType(),
         prefixIcon: Icon(
           widget.prefixIcon,
-          color: cFormFieldState == CFormFieldState.error
+          color: cFormFieldStyle == CFormFieldStyle.error
               ? Theme.of(context).colorScheme.error
               : null,
         ),
@@ -137,20 +147,20 @@ class _CFormFieldState extends State<CFormField> {
   }
 
   TextStyle? hintStyleByType() {
-    switch (cFormFieldState) {
-      case CFormFieldState.emptyDefault:
+    switch (cFormFieldStyle) {
+      case CFormFieldStyle.emptyDefault:
         return AppTextStyle.textMd.copyWith(
           color: AppStyleColors.gray400,
         );
-      case CFormFieldState.emptyActive:
+      case CFormFieldStyle.emptyActive:
         return AppTextStyle.textMd.copyWith(
           color: AppStyleColors.gray400,
         );
-      case CFormFieldState.filledDefault:
+      case CFormFieldStyle.filledDefault:
         return AppTextStyle.textMd.copyWith(
           color: AppStyleColors.gray200,
         );
-      case CFormFieldState.filledActive:
+      case CFormFieldStyle.filledActive:
         return AppTextStyle.textMd.copyWith(
           color: AppStyleColors.gray200,
         );

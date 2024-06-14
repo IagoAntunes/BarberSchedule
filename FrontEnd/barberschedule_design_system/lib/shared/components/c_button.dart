@@ -8,16 +8,22 @@ enum CButtonType {
   disabled,
 }
 
-class CButton extends StatelessWidget {
+enum CButtonState {
+  idle,
+  disabled,
+  loading,
+}
+
+class CButton extends StatefulWidget {
   const CButton({
     super.key,
-    this.cButtonType = CButtonType.primary,
-    required this.text,
-    required this.onPressed,
+    this.cButtonState,
     this.height,
     this.width,
+    required this.text,
+    required this.onPressed,
   });
-  final CButtonType cButtonType;
+  final ValueNotifier<CButtonState>? cButtonState;
   final String text;
   final Function() onPressed;
 
@@ -25,23 +31,68 @@ class CButton extends StatelessWidget {
   final double? width;
 
   @override
+  State<CButton> createState() => _CButtonState();
+}
+
+class _CButtonState extends State<CButton> {
+  CButtonType cButtonType = CButtonType.primary;
+  late CButtonState cButtonState;
+
+  void _updateCButtonState() {
+    setState(() {
+      cButtonState = widget.cButtonState?.value ?? CButtonState.idle;
+    });
+    if (widget.cButtonState!.value == CButtonState.disabled) {
+      cButtonType = CButtonType.disabled;
+    } else {
+      cButtonType = CButtonType.primary;
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    cButtonState = widget.cButtonState?.value ?? CButtonState.idle;
+    widget.cButtonState?.addListener(_updateCButtonState);
+    if (widget.cButtonState!.value == CButtonState.disabled) {
+      cButtonType = CButtonType.disabled;
+    } else {
+      cButtonType = CButtonType.primary;
+    }
+  }
+
+  @override
+  void dispose() {
+    widget.cButtonState?.removeListener(_updateCButtonState);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      height: height,
-      minWidth: width,
-      color: _colorButtonByCButtonType(),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-        side: _borderSideByCButtonType(),
-      ),
-      onPressed: () {
-        if (cButtonType == CButtonType.disabled) return;
-        onPressed();
+    return ValueListenableBuilder(
+      valueListenable: widget.cButtonState!,
+      builder: (context, value, child) {
+        return MaterialButton(
+          height: widget.height,
+          minWidth: widget.width,
+          color: _colorButtonByCButtonType(),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+            side: _borderSideByCButtonType(),
+          ),
+          onPressed: () {
+            if (widget.cButtonState!.value == CButtonState.disabled ||
+                widget.cButtonState!.value == CButtonState.loading) return;
+            widget.onPressed();
+          },
+          child: widget.cButtonState!.value == CButtonState.loading
+              ? const CircularProgressIndicator()
+              : Text(
+                  widget.text,
+                  style: AppTextStyle.titleSm,
+                ),
+        );
       },
-      child: Text(
-        text,
-        style: AppTextStyle.titleSm,
-      ),
     );
   }
 

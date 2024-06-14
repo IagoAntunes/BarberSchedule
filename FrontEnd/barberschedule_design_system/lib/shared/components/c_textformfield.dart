@@ -7,6 +7,12 @@ enum CFormFieldState {
   emptyActive,
   filledDefault,
   filledActive,
+  error,
+}
+
+enum CFormFieldType {
+  text,
+  password,
 }
 
 class CFormField extends StatefulWidget {
@@ -14,9 +20,17 @@ class CFormField extends StatefulWidget {
     super.key,
     this.hintText,
     this.onChanged,
+    this.prefixIcon,
+    this.cFormFieldType = CFormFieldType.text,
+    this.textInputType,
+    this.validator,
   });
-  final String? hintText;
   final void Function(String)? onChanged;
+  final String? Function(String?)? validator;
+  final String? hintText;
+  final IconData? prefixIcon;
+  final CFormFieldType cFormFieldType;
+  final TextInputType? textInputType;
   @override
   State<CFormField> createState() => _CFormFieldState();
 }
@@ -25,9 +39,18 @@ class _CFormFieldState extends State<CFormField> {
   FocusNode focusNode = FocusNode();
   CFormFieldState cFormFieldState = CFormFieldState.emptyDefault;
   final controller = TextEditingController();
+
+  late ValueNotifier obscureText;
+
   @override
   void initState() {
     super.initState();
+    if (widget.cFormFieldType == CFormFieldType.password) {
+      obscureText = ValueNotifier<bool>(true);
+    } else {
+      obscureText = ValueNotifier<bool>(false);
+    }
+
     focusNode.addListener(() {
       if (focusNode.hasFocus && controller.text.isEmpty) {
         cFormFieldState = CFormFieldState.emptyActive;
@@ -47,11 +70,47 @@ class _CFormFieldState extends State<CFormField> {
       controller: controller,
       onChanged: widget.onChanged,
       focusNode: focusNode,
+      obscureText: obscureText.value,
       style: hintStyleByType(),
+      keyboardType: _getKeyboardByType(),
+      validator: (value) {
+        String? result;
+        if (widget.validator != null) {
+          result = widget.validator!(value);
+        }
+        if (result != null) {
+          setState(() {
+            cFormFieldState = CFormFieldState.error;
+          });
+        } else {
+          setState(() {
+            cFormFieldState = CFormFieldState.filledDefault;
+          });
+        }
+        return result;
+      },
       decoration: InputDecoration(
         hintText: widget.hintText,
         hintStyle: hintStyleByType(),
-        prefixIcon: const Icon(Icons.account_box_outlined),
+        prefixIcon: Icon(
+          widget.prefixIcon,
+          color: cFormFieldState == CFormFieldState.error
+              ? Theme.of(context).colorScheme.error
+              : null,
+        ),
+        suffixIcon: widget.cFormFieldType == CFormFieldType.password
+            ? IconButton(
+                onPressed: () {
+                  setState(() {
+                    obscureText.value = !obscureText.value;
+                  });
+                },
+                icon: Icon(
+                  obscureText.value ? Icons.visibility : Icons.visibility_off,
+                  color: AppStyleColors.gray300,
+                ),
+              )
+            : null,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(
@@ -99,6 +158,15 @@ class _CFormFieldState extends State<CFormField> {
         return AppTextStyle.textMd.copyWith(
           color: AppStyleColors.gray200,
         );
+    }
+  }
+
+  TextInputType? _getKeyboardByType() {
+    switch (widget.cFormFieldType) {
+      case CFormFieldType.password:
+        return TextInputType.visiblePassword;
+      default:
+        return null;
     }
   }
 }

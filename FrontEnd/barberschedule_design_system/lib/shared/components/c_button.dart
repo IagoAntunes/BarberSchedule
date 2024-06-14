@@ -36,7 +36,7 @@ class CButton extends StatelessWidget {
       ),
       onPressed: () {
         if (cButtonType == CButtonType.disabled) return;
-        onPressed;
+        onPressed();
       },
       child: Text(
         text,

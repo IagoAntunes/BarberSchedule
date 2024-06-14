@@ -12,9 +12,11 @@ class CDataInput extends StatefulWidget {
     super.key,
     this.hintText,
     required this.controller,
+    this.preffixIcon,
   });
   final String? hintText;
   final TextEditingController controller;
+  final Widget? preffixIcon;
   @override
   State<CDataInput> createState() => _CDataInputState();
 }
@@ -53,7 +55,7 @@ class _CDataInputState extends State<CDataInput> {
       decoration: InputDecoration(
         hintText: widget.hintText,
         hintStyle: hintStyleByType(),
-        prefixIcon: const Icon(Icons.date_range),
+        prefixIcon: widget.preffixIcon,
         suffixIcon: Icon(
           cFormFieldState == CCDataInputState.primary
               ? Icons.keyboard_arrow_down

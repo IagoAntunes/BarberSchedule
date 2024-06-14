@@ -15,7 +15,7 @@ abstract class AppStyleColors {
   static final yellowLight = HexToColor.toColor('#DBC170');
   static final yellow = HexToColor.toColor('#B8952E');
   static final yellowDark = HexToColor.toColor('#846F2E');
-
+  static final error = HexToColor.toColor('#B22222'); // Vermelho
   //Base
   static final gray100 = HexToColor.toColor('#F5F4F5');
   static final gray200 = HexToColor.toColor('#B2AFB6');

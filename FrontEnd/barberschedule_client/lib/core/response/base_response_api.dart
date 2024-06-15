@@ -1,9 +1,9 @@
 class BaseApiResponse {
   bool isSuccess;
   String message;
-  BaseApiResponse._({
+  BaseApiResponse({
     required this.isSuccess,
-    required this.message,
+    this.message = '',
   });
 
   BaseApiResponse.success({

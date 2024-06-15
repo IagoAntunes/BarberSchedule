@@ -6,4 +6,8 @@ abstract class AppApiRoutes {
   static String registerClient() {
     return '${_authApiUrl}auth/register/client';
   }
+
+  static String loginClient() {
+    return '${_authApiUrl}auth/login/client';
+  }
 }

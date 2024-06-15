@@ -3,10 +3,9 @@ import 'package:barberschedule_client/core/utils/app_api_routes.dart';
 import 'package:barberschedule_client/features/auth/register/domain/dto/register_client_request.dart';
 import 'package:barberschedule_client/features/auth/register/infra/datasource/i_register_client_datasource.dart';
 import 'package:barberschedule_client/services/http/i_http_service.dart';
-import 'package:dio/dio.dart';
 
 class RegisterClientDataSource extends IRegisterClientDataSource {
-  IHttpService _httpService;
+  final IHttpService _httpService;
   RegisterClientDataSource({
     required IHttpService httpService,
   }) : _httpService = httpService;

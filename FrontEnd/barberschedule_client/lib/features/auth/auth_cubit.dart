@@ -1,18 +1,23 @@
 import 'package:barberschedule_client/features/auth/auth_state.dart';
+import 'package:barberschedule_client/services/database/key/shared_preferences_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthCubit extends Cubit<IAuthState> {
-  AuthCubit()
-      : super(
+  final SharedPreferencesService _sharedPreferences;
+  AuthCubit({required SharedPreferencesService sharedPreferences})
+      : _sharedPreferences = sharedPreferences,
+        super(
           AuthState(
-            isAuthenticated: TEste.hasToken(),
+            isAuthenticated: false,
           ),
         );
-}
 
-class TEste {
-  static bool hasToken() {
-    Future.delayed(Duration(seconds: 3));
-    return true;
+  void logout() {
+    _sharedPreferences.setString('token', '');
+    emit(AuthState(isAuthenticated: false));
+  }
+
+  void login() {
+    emit(AuthState(isAuthenticated: true));
   }
 }

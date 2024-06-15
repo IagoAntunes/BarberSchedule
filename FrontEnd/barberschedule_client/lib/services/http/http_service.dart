@@ -26,7 +26,7 @@ class HttpServiceImp implements IHttpService {
           .timeout(timeOut ?? const Duration(seconds: 30));
 
       return _dioResponseConverter(response);
-    } on DioException catch (e) {
+    } on DioException {
       return null;
     }
   }

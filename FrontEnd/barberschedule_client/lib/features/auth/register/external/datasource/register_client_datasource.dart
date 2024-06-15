@@ -24,7 +24,6 @@ class RegisterClientDataSource extends IRegisterClientDataSource {
         return BaseApiResponse.failure();
       }
     } catch (e) {
-      print(e);
       return BaseApiResponse.failure();
     }
   }

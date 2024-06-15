@@ -1,28 +1,22 @@
-import 'package:barberschedule_client/features/auth/login/external/datasources/login_client_datasource.dart';
-import 'package:barberschedule_client/features/auth/login/infra/repositories/login_client_repository.dart';
 import 'package:barberschedule_client/features/auth/login/presentation/blocs/login_cubit.dart';
 import 'package:barberschedule_client/features/auth/login/presentation/blocs/login_state.dart';
 import 'package:barberschedule_client/features/auth/register/presentation/pages/register_client_page.dart';
-import 'package:barberschedule_client/services/http/http_service.dart';
 import 'package:barberschedule_design_system/settings/style/app_style_colors.dart';
 import 'package:barberschedule_design_system/settings/style/app_text_style.dart';
 import 'package:barberschedule_design_system/shared/components/c_button.dart';
 import 'package:barberschedule_design_system/shared/components/c_textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+
+import '../../../auth_cubit.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
   final _formKey = GlobalKey<FormState>();
 
-  final loginCubit = LoginCubit(
-    repository: LoginClientRepository(
-      dataSource: LoginClientDataSource(
-        httpService: HttpServiceImp(),
-      ),
-    ),
-  );
+  final loginCubit = GetIt.I.get<LoginCubit>();
   final btnLoginState = ValueNotifier(CButtonState.disabled);
 
   final emailController = TextEditingController();
@@ -40,6 +34,7 @@ class LoginPage extends StatelessWidget {
             btnLoginState.value = CButtonState.idle;
           } else if (state is SuccessLoginListener) {
             btnLoginState.value = CButtonState.idle;
+            GetIt.I.get<AuthCubit>().login();
           }
         },
         listenWhen: (previous, current) => current is ILoginListener,

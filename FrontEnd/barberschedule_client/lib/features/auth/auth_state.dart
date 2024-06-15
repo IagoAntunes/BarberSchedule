@@ -1,5 +1,5 @@
 abstract class IAuthState {
-  final bool isAuthenticated;
+  bool isAuthenticated;
   final String? user;
 
   IAuthState({required this.isAuthenticated, this.user});

@@ -10,10 +10,10 @@ class AppTheme {
     fontFamily: 'Catamaran',
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: AppStyleColors.white,
       ),
-      actionsIconTheme: IconThemeData(
+      actionsIconTheme: const IconThemeData(
         color: AppStyleColors.white,
       ),
       titleTextStyle:

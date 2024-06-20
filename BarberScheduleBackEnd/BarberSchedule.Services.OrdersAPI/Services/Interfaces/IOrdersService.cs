@@ -7,6 +7,7 @@ namespace BarberSchedule.Services.OrdersAPI.Services.Interfaces
     {
         Task<GetOrderResponseDto?> ChangeOrderStatus(ChangeOrderStatusRequest request);
         Task<GetOrderResponseDto?> CreateOrder(CreateOrderRequestDto request);
+        Task<GetOrderResponseDto?> GetCurrentOrder(string userId);
         Task<ICollection<GetOrderResponseDto>> GetOrderByUserId(string userId, string? status);
         Task<ICollection<GetOrderResponseDto>> GetOrdersByBarberShopId(object barberShopId, string? status);
     }

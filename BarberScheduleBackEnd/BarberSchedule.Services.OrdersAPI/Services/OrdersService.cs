@@ -2,9 +2,11 @@
 using BarberSchedule.Services.OrdersAPI.Data;
 using BarberSchedule.Services.OrdersAPI.Dto;
 using BarberSchedule.Services.OrdersAPI.Dto.Request;
+using BarberSchedule.Services.OrdersAPI.Migrations;
 using BarberSchedule.Services.OrdersAPI.Models;
 using BarberSchedule.Services.OrdersAPI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BarberSchedule.Services.OrdersAPI.Services
 {
@@ -82,6 +84,33 @@ namespace BarberSchedule.Services.OrdersAPI.Services
 
             var response = _mapper.Map<ICollection<GetOrderResponseDto>>(ordersList);
             return response;
+        }
+
+        public async Task<GetOrderResponseDto?> GetCurrentOrder(string userId)
+        {
+            var orders = await _dbCOntext.Orders
+                   .Where(x => x.UserId == userId).ToListAsync();
+            if (orders == null)
+            {
+                return null;
+            }
+            List<OrderModel> auxList = [];
+            foreach(var order in orders)
+            {
+                if(DateTime.Parse(order.DateTime) > DateTime.Now)
+                {
+                    auxList.Add(order);
+                }
+            }
+            if(auxList.IsNullOrEmpty())
+            {
+                return null;
+            }
+            auxList.OrderByDescending(x => DateTime.Parse(x.DateTime));
+
+            var responseDto = _mapper.Map<GetOrderResponseDto>(auxList.First());
+
+            return responseDto;
         }
     }
 }

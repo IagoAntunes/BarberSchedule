@@ -57,6 +57,8 @@ class _SchedulingPageState extends State<SchedulingPage> {
   final List<String> listNight = [];
   DateTime? dateTime;
 
+  int? selectedPaymentMethod;
+
   onTapTime(String time) {
     setState(() {
       chosenTime = time;
@@ -157,6 +159,7 @@ class _SchedulingPageState extends State<SchedulingPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const SizedBox(height: 8),
                     Text(
                       "Tarde",
                       style: AppTextStyle.textMd.copyWith(
@@ -168,9 +171,9 @@ class _SchedulingPageState extends State<SchedulingPage> {
                       children: [
                         for (var i = 0; i < listAfternoon.length; i++)
                           TimeSelectItem(
-                            text: listMorning[i],
+                            text: listAfternoon[i],
                             onTap: (value) {
-                              onTapTime(listMorning[i]);
+                              onTapTime(listAfternoon[i]);
                             },
                           ),
                       ],
@@ -181,6 +184,7 @@ class _SchedulingPageState extends State<SchedulingPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const SizedBox(height: 8),
                     Text(
                       "Noite",
                       style: AppTextStyle.textMd.copyWith(
@@ -192,13 +196,55 @@ class _SchedulingPageState extends State<SchedulingPage> {
                       children: [
                         for (var i = 0; i < listNight.length; i++)
                           TimeSelectItem(
-                            text: listMorning[i],
+                            text: listNight[i],
                             onTap: (value) {},
                           ),
                       ],
                     ),
                   ],
                 ),
+              const SizedBox(height: 32),
+              Text(
+                "Metodo de Pagamento",
+                style: AppTextStyle.titleMd.copyWith(
+                  color: AppStyleColors.gray200,
+                ),
+              ),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: AppStyleColors.gray500,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
+                  color: AppStyleColors.gray600,
+                ),
+                child: DropdownButton(
+                  value: selectedPaymentMethod,
+                  onChanged: (value) {
+                    setState(() {
+                      selectedPaymentMethod = value;
+                    });
+                  },
+                  hint: Text(
+                    "Selecione o método de pagamento",
+                    style: AppTextStyle.textMd.copyWith(
+                      color: AppStyleColors.gray300,
+                    ),
+                  ),
+                  items: widget.barberShop.paymentMethods
+                      .map(
+                        (e) => DropdownMenuItem(
+                          value: e.idPaymentMethod,
+                          child: Text(
+                            e.name,
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ),
+              ),
               const Spacer(),
               CButton(
                 height: 56,
@@ -206,12 +252,15 @@ class _SchedulingPageState extends State<SchedulingPage> {
                 width: double.infinity,
                 text: 'Confirmar',
                 onPressed: () {
-                  if (dateTime != null && chosenTime.isNotEmpty) {
+                  if (dateTime != null &&
+                      chosenTime.isNotEmpty &&
+                      selectedPaymentMethod != null) {
                     schedulingCubit.scheduler(
                       widget.barberShop.id,
                       widget.barberShop.price,
                       chosenTime,
                       dateTime!,
+                      selectedPaymentMethod.toString(),
                     );
                   }
                 },

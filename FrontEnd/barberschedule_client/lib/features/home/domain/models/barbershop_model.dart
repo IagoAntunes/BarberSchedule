@@ -1,4 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+
+import 'payment_method_model.dart';
 
 class BarberShopModel {
   final String id;
@@ -11,6 +14,7 @@ class BarberShopModel {
   final String number;
   final String availableTimes;
   final double price;
+  final List<PaymentMethodModel> paymentMethods;
   BarberShopModel({
     required this.id,
     required this.userId,
@@ -22,10 +26,12 @@ class BarberShopModel {
     required this.number,
     required this.availableTimes,
     required this.price,
+    required this.paymentMethods,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'id': id,
       'userId': userId,
       'name': name,
       'description': description,
@@ -35,6 +41,7 @@ class BarberShopModel {
       'number': number,
       'availableTimes': availableTimes,
       'price': price,
+      'paymentMethods': paymentMethods.map((x) => x.toMap()).toList(),
     };
   }
 
@@ -50,6 +57,11 @@ class BarberShopModel {
       number: map['number'] as String,
       availableTimes: map['availableTimes'] as String,
       price: double.parse(map['price'].toString()),
+      paymentMethods: List<PaymentMethodModel>.from(
+        (map['paymentMethods'] as List<dynamic>).map<PaymentMethodModel>(
+          (x) => PaymentMethodModel.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
     );
   }
 

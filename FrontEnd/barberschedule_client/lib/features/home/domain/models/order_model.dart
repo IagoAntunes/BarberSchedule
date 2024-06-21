@@ -41,7 +41,7 @@ class OrderModel {
       barberShopId: map['barberShopId'] as String,
       dateTime: map['dateTime'] as String,
       paymentMethodId: map['paymentMethodId'] as String,
-      price: map['price'] as double,
+      price: double.parse(map['price'].toString()),
       status: map['status'] as String,
       barberShop: map['barberShop'] == null
           ? null

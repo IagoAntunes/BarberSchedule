@@ -38,9 +38,7 @@ class _CDataInputState extends State<CDataInput> {
       controller: widget.controller,
       style: hintStyleByType(),
       readOnly: true,
-      onEditingComplete: () {
-        print("Oi");
-      },
+      onEditingComplete: () {},
       onTap: () async {
         setState(() {
           cFormFieldState = CCDataInputState.active;

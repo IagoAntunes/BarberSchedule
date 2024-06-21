@@ -14,7 +14,7 @@ class DecideRoutePage extends StatelessWidget {
 
   final list = [
     const HomePage(),
-    MarkingHistoryPage(),
+    const MarkingHistoryPage(),
   ];
 
   @override

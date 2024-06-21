@@ -20,6 +20,7 @@ class SchedulingCubit extends Cubit<ISchedulingState> {
     double price,
     String selectedTime,
     DateTime datetime,
+    String idPaymentMethod,
   ) async {
     emit(SuccessSchedulingListener());
     var userId = await _sharedPreferencesService.getData('userId');
@@ -39,7 +40,7 @@ class SchedulingCubit extends Cubit<ISchedulingState> {
       userId,
       barberShopId,
       scheduledTime.toString(),
-      "paymentId",
+      idPaymentMethod,
       price,
       'waiting',
     );

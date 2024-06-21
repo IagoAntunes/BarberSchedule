@@ -1,3 +1,4 @@
+import 'package:barberschedule_client/features/auth/auth_cubit.dart';
 import 'package:barberschedule_client/features/barbershops/presentation/states/barbershops_state.dart';
 import 'package:barberschedule_client/features/home/presentation/blocs/scheduled_time_cubit.dart';
 import 'package:barberschedule_client/features/home/presentation/pages/scheduling_page.dart';
@@ -37,6 +38,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Dashboard"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              GetIt.I.get<AuthCubit>().logout();
+            },
+            icon: Icon(
+              Icons.logout,
+            ),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

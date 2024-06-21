@@ -23,6 +23,11 @@ class AppTheme {
         statusBarIconBrightness: Brightness.dark,
       ),
     ),
+    dropdownMenuTheme: DropdownMenuThemeData(
+      textStyle: AppTextStyle.textSm.copyWith(
+        color: AppStyleColors.gray100,
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppStyleColors.backgroundColor,
       selectedItemColor: AppStyleColors.primaryDefault,

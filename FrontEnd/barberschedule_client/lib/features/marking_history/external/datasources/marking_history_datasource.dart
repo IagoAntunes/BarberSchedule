@@ -1,11 +1,11 @@
 import 'dart:io';
 
 import 'package:barberschedule_client/core/utils/app_api_routes.dart';
-import 'package:barberschedule_client/features/home/domain/queryParameters/get_orders_by_userid_query_parameter.dart';
-import 'package:barberschedule_client/features/home/infra/datasources/i_marking_history_datasource.dart';
 import 'package:barberschedule_client/services/http/i_http_service.dart';
 
 import '../../../../core/response/base_service_response.dart';
+import '../../domain/queryParameters/get_orders_by_userid_query_parameter.dart';
+import '../../infra/datasources/i_marking_history_datasource.dart';
 
 class MarkingHistoryDataSource implements IMarkingHistoryDataSource {
   MarkingHistoryDataSource({required IHttpService httpService})
@@ -25,7 +25,7 @@ class MarkingHistoryDataSource implements IMarkingHistoryDataSource {
       }
       return ResponseData.error({'data': 'error'});
     } catch (e) {
-      return ResponseData.error(e.toString());
+      return ResponseData.error({'data': 'error'});
     }
   }
 }

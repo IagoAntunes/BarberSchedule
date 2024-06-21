@@ -27,7 +27,7 @@ class ItemMarkingHistory extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            order.barberShop.name,
+            order.barberShop?.name ?? 'Não Informado',
             style: AppTextStyle.textSm.copyWith(color: AppStyleColors.gray200),
           ),
           Row(

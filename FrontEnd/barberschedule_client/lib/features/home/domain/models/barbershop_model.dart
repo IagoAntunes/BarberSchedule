@@ -9,6 +9,7 @@ class BarberShopModel {
   final String city;
   final String number;
   final String availableTimes;
+  final int price;
   BarberShopModel({
     required this.userId,
     required this.name,
@@ -18,6 +19,7 @@ class BarberShopModel {
     required this.city,
     required this.number,
     required this.availableTimes,
+    required this.price,
   });
 
   Map<String, dynamic> toMap() {
@@ -30,6 +32,7 @@ class BarberShopModel {
       'city': city,
       'number': number,
       'availableTimes': availableTimes,
+      'price': price,
     };
   }
 
@@ -43,6 +46,7 @@ class BarberShopModel {
       city: map['city'] as String,
       number: map['number'] as String,
       availableTimes: map['availableTimes'] as String,
+      price: map['price'] as int,
     );
   }
 

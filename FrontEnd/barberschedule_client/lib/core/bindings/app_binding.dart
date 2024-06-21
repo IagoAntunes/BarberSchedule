@@ -1,3 +1,4 @@
+import 'package:barberschedule_client/core/cubits/bottom_nav_cubit.dart';
 import 'package:barberschedule_client/features/auth/auth_cubit.dart';
 import 'package:barberschedule_client/features/auth/login/domain/repositories/i_login_client_repository.dart';
 import 'package:barberschedule_client/features/auth/login/external/datasources/login_client_datasource.dart';
@@ -53,5 +54,6 @@ class AppBindings {
         sharedPreferencesService: getIt(),
       ),
     );
+    getIt.registerSingleton(BottomNavCubit());
   }
 }

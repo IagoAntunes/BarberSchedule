@@ -3,6 +3,7 @@ abstract class AppApiRoutes {
 
   static const String _authApiUrl = "https://10.0.2.2:7039/api/";
   static const String _ordersApiUrl = "https://10.0.2.2:7199/api/";
+  static const String _barberShopApiUrl = "https://10.0.2.2:7001/api/";
 
   static String registerClient() {
     return '${_authApiUrl}auth/register/client';
@@ -18,5 +19,9 @@ abstract class AppApiRoutes {
 
   static String getNextOrder() {
     return '${_ordersApiUrl}Orders/GetCurrentOrder';
+  }
+
+  static String getAllBarberShops() {
+    return '${_barberShopApiUrl}BarberShopInfo/GetAll';
   }
 }

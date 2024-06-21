@@ -25,7 +25,7 @@ class ScheduledTimeDataSource implements IScheduledTimeDataSource {
       }
       return ResponseData.error({'data': 'error'});
     } catch (e) {
-      return ResponseData.error(e.toString());
+      return ResponseData.error({'data': 'error'});
     }
   }
 }

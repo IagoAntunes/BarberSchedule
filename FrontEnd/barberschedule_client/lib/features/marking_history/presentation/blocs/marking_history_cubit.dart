@@ -1,7 +1,8 @@
-import 'package:barberschedule_client/features/home/domain/repositories/i_marking_history_repository.dart';
 import 'package:barberschedule_client/features/home/presentation/states/marking_history_state.dart';
 import 'package:barberschedule_client/services/database/key/shared_preferences_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../domain/repositories/i_marking_history_repository.dart';
 
 class MarkingHistoryCubit extends Cubit<IMarkingHistoryState> {
   MarkingHistoryCubit(

@@ -23,6 +23,17 @@ class AppTheme {
         statusBarIconBrightness: Brightness.dark,
       ),
     ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppStyleColors.backgroundColor,
+      selectedItemColor: AppStyleColors.primaryDefault,
+      unselectedItemColor: AppStyleColors.gray200,
+      selectedLabelStyle: AppTextStyle.textSm.copyWith(
+        color: AppStyleColors.primaryDefault,
+      ),
+      unselectedLabelStyle: AppTextStyle.textSm.copyWith(
+        color: AppStyleColors.gray200,
+      ),
+    ),
     colorScheme: ColorScheme(
       brightness: Brightness.light,
       primary: AppStyleColors.primaryDefault,

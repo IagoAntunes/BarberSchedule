@@ -1,5 +1,5 @@
-import 'package:barberschedule_client/features/home/domain/models/order_model.dart';
+import '../models/current_order_dto.dart';
 
 abstract class IScheduledTimeRepository {
-  Future<OrderModel?> getNextOrder(String userId);
+  Future<CurrentOrderDto?> getNextOrder(String userId);
 }

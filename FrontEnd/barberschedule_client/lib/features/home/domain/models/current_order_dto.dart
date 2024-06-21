@@ -1,8 +1,6 @@
 import 'dart:convert';
 
-import 'package:barberschedule_client/features/home/domain/models/barbershop_model.dart';
-
-class OrderModel {
+class CurrentOrderDto {
   final String orderId;
   final String userId;
   final String barberShopId;
@@ -10,8 +8,8 @@ class OrderModel {
   final String paymentMethodId;
   final int price;
   final String status;
-  final BarberShopModel? barberShop;
-  OrderModel({
+  final String nameBarberShop;
+  CurrentOrderDto({
     required this.orderId,
     required this.userId,
     required this.barberShopId,
@@ -19,7 +17,7 @@ class OrderModel {
     required this.paymentMethodId,
     required this.price,
     required this.status,
-    required this.barberShop,
+    required this.nameBarberShop,
   });
 
   Map<String, dynamic> toMap() {
@@ -31,11 +29,12 @@ class OrderModel {
       'paymentMethodId': paymentMethodId,
       'price': price,
       'status': status,
+      'nameBarberShop': nameBarberShop,
     };
   }
 
-  factory OrderModel.fromMap(Map<String, dynamic> map) {
-    return OrderModel(
+  factory CurrentOrderDto.fromMap(Map<String, dynamic> map) {
+    return CurrentOrderDto(
       orderId: map['orderId'] as String,
       userId: map['userId'] as String,
       barberShopId: map['barberShopId'] as String,
@@ -43,14 +42,12 @@ class OrderModel {
       paymentMethodId: map['paymentMethodId'] as String,
       price: map['price'] as int,
       status: map['status'] as String,
-      barberShop: map['barberShop'] == null
-          ? null
-          : BarberShopModel.fromMap(map['barberShop'] as Map<String, dynamic>),
+      nameBarberShop: map['nameBarberShop'] as String,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory OrderModel.fromJson(String source) =>
-      OrderModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory CurrentOrderDto.fromJson(String source) =>
+      CurrentOrderDto.fromMap(json.decode(source) as Map<String, dynamic>);
 }

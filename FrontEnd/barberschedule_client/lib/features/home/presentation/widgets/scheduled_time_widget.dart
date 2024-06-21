@@ -1,4 +1,4 @@
-import 'package:barberschedule_client/features/home/domain/models/order_model.dart';
+import 'package:barberschedule_client/features/home/domain/models/current_order_dto.dart';
 import 'package:barberschedule_design_system/settings/style/app_style_colors.dart';
 import 'package:barberschedule_design_system/settings/style/app_text_style.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,7 @@ class ScheduledTime extends StatelessWidget {
     super.key,
     required this.order,
   });
-  final OrderModel order;
+  final CurrentOrderDto order;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,7 +39,7 @@ class ScheduledTime extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          order.barberShop.name,
+                          order.nameBarberShop,
                           style: AppTextStyle.textSm
                               .copyWith(color: AppStyleColors.gray200),
                         ),

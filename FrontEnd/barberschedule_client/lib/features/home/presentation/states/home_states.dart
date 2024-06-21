@@ -1,4 +1,4 @@
-import 'package:barberschedule_client/features/home/domain/models/order_model.dart';
+import 'package:barberschedule_client/features/home/domain/models/current_order_dto.dart';
 
 abstract class IScheduledTimeState {}
 
@@ -7,7 +7,7 @@ class IdleScheduledTimeState extends IScheduledTimeState {}
 class LoadingScheduledTimeState extends IScheduledTimeState {}
 
 class SuccessScheduledTimeState extends IScheduledTimeState {
-  final OrderModel? order;
+  final CurrentOrderDto? order;
   SuccessScheduledTimeState({
     required this.order,
   });

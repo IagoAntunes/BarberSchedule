@@ -39,13 +39,6 @@ class NoScheduledTime extends StatelessWidget {
                 color: AppStyleColors.gray200,
                 thickness: 2.0,
               ),
-              CButton(
-                text: 'Agendar',
-                cButtonState: btnLoginState,
-                onPressed: () {
-                  //
-                },
-              )
             ],
           ),
         ),

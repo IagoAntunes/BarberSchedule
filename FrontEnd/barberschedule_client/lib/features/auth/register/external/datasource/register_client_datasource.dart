@@ -12,8 +12,6 @@ class RegisterClientDataSource extends IRegisterClientDataSource {
   @override
   Future<BaseApiResponse> register(RegisterClientRequest request) async {
     try {
-      print("url -> ${AppApiRoutes.registerClient()}");
-      print("data -> ${request.toJson()}");
       final result = await _httpService.post(
         AppApiRoutes.registerClient(),
         request.toJson(),

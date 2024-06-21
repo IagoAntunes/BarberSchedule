@@ -70,7 +70,14 @@ class LoginPage extends StatelessWidget {
                               color: Colors.white,
                             ),
                           ),
-                          const SizedBox(height: 64),
+                          Text(
+                            'Faça login para encontrar a barbearia perfeita e agendar seu horário com facilidade.',
+                            style: AppTextStyle.textMd.copyWith(
+                              color: AppStyleColors.gray300,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 52),
                           CFormField(
                             controller: emailController,
                             hintText: 'Email',

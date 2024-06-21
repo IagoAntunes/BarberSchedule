@@ -15,6 +15,7 @@ namespace BarberSchedule.Services.OrdersAPI
                 {
                     config.CreateMap<CreateOrderRequestDto, OrderModel>().ReverseMap();
                     config.CreateMap<GetOrderResponseDto,OrderModel>().ReverseMap();
+                    config.CreateMap<GetCurrentOrderResponse, OrderModel>().ReverseMap();
                 });
 
 

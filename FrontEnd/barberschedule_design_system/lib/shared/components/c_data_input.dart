@@ -1,6 +1,7 @@
 import 'package:barberschedule_design_system/settings/style/app_style_colors.dart';
 import 'package:barberschedule_design_system/settings/style/app_text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 enum CCDataInputState {
   primary,
@@ -13,10 +14,12 @@ class CDataInput extends StatefulWidget {
     this.hintText,
     required this.controller,
     this.preffixIcon,
+    required this.changedTime,
   });
   final String? hintText;
   final TextEditingController controller;
   final Widget? preffixIcon;
+  final Function() changedTime;
   @override
   State<CDataInput> createState() => _CDataInputState();
 }
@@ -35,6 +38,7 @@ class _CDataInputState extends State<CDataInput> {
       controller: widget.controller,
       style: hintStyleByType(),
       readOnly: true,
+      onEditingComplete: () {},
       onTap: () async {
         setState(() {
           cFormFieldState = CCDataInputState.active;
@@ -48,7 +52,10 @@ class _CDataInputState extends State<CDataInput> {
         ).then((value) {
           setState(() {
             cFormFieldState = CCDataInputState.primary;
-            if (value != null) widget.controller.text = value.toString();
+            if (value != null) {
+              widget.controller.text = DateFormat("dd/MM/yyyy").format(value);
+              widget.changedTime.call();
+            }
           });
         });
       },

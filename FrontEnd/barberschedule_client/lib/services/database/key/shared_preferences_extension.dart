@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-extension SharedPreferencesExtension on SharedPreferences {
+extension SharedPreferencesServiceExtension on SharedPreferences {
   dynamic getData(String key) {
     var value = get(key);
     return value;

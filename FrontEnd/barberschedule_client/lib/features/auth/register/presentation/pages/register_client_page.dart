@@ -191,7 +191,6 @@ class _ConditionsStepState extends State<ConditionsStep> {
                 text: 'Concluir',
                 cButtonState: cButtonNextState,
                 onPressed: () {
-                  print(widget.registerCubit.registerClientModel.toJson());
                   widget.onNext();
                 },
               ),

@@ -3,9 +3,9 @@ import 'package:barberschedule_client/services/database/key/shared_preferences_s
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthCubit extends Cubit<IAuthState> {
-  final SharedPreferencesService _sharedPreferences;
-  AuthCubit({required SharedPreferencesService sharedPreferences})
-      : _sharedPreferences = sharedPreferences,
+  final SharedPreferencesService _sharedPreferencesService;
+  AuthCubit({required SharedPreferencesService sharedPreferencesService})
+      : _sharedPreferencesService = sharedPreferencesService,
         super(
           AuthState(
             isAuthenticated: false,
@@ -13,7 +13,7 @@ class AuthCubit extends Cubit<IAuthState> {
         );
 
   void logout() {
-    _sharedPreferences.setString('token', '');
+    _sharedPreferencesService.setString('token', '');
     emit(AuthState(isAuthenticated: false));
   }
 

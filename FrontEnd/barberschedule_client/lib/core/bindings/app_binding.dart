@@ -1,3 +1,4 @@
+import 'package:barberschedule_client/core/cubits/bottom_nav_cubit.dart';
 import 'package:barberschedule_client/features/auth/auth_cubit.dart';
 import 'package:barberschedule_client/features/auth/login/domain/repositories/i_login_client_repository.dart';
 import 'package:barberschedule_client/features/auth/login/external/datasources/login_client_datasource.dart';
@@ -13,15 +14,18 @@ import 'package:barberschedule_client/services/database/key/shared_preferences_s
 import 'package:barberschedule_client/services/http/http_service.dart';
 import 'package:barberschedule_client/services/http/i_http_service.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AppBindings {
   static Future<void> setupAppBindings() async {
     final getIt = GetIt.I;
+    var prefs = await SharedPreferences.getInstance();
     getIt.registerSingleton<SharedPreferencesService>(
-      SharedPreferencesService.instance,
+      SharedPreferencesService(preferences: prefs),
     );
     getIt.registerSingleton<IHttpService>(HttpServiceImp());
-    getIt.registerSingleton<AuthCubit>(AuthCubit(sharedPreferences: getIt()));
+    getIt.registerSingleton<AuthCubit>(
+        AuthCubit(sharedPreferencesService: getIt()));
     _loginBindings(getIt);
     _registerBindings(getIt);
   }
@@ -47,8 +51,9 @@ class AppBindings {
     getIt.registerFactory<LoginCubit>(
       () => LoginCubit(
         repository: getIt(),
-        sharedPreferences: getIt(),
+        sharedPreferencesService: getIt(),
       ),
     );
+    getIt.registerSingleton(BottomNavCubit());
   }
 }

@@ -4,12 +4,12 @@ import 'package:barberschedule_client/services/database/key/shared_preferences_s
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginCubit extends Cubit<ILoginState> {
-  final SharedPreferencesService _sharedPreferences;
+  final SharedPreferencesService _sharedPreferencesService;
   LoginCubit({
     required ILoginClientRepository repository,
-    required SharedPreferencesService sharedPreferences,
+    required SharedPreferencesService sharedPreferencesService,
   })  : _repository = repository,
-        _sharedPreferences = sharedPreferences,
+        _sharedPreferencesService = sharedPreferencesService,
         super(IdleLoginState());
 
   final ILoginClientRepository _repository;
@@ -19,7 +19,8 @@ class LoginCubit extends Cubit<ILoginState> {
     emit(LoadingLoginListener());
     var result = await _repository.login(email, password);
     if (result.isSuccess) {
-      _sharedPreferences.saveData('token', result.token);
+      _sharedPreferencesService.saveData('token', result.token);
+      _sharedPreferencesService.saveData('userId', result.user!.id);
       emit(SuccessLoginListener());
     } else {
       emit(IdleLoginState());

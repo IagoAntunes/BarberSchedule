@@ -95,6 +95,23 @@ namespace BarberSchedule.Services.OrdersAPI.Controllers
         }
 
         [Authorize(Roles = "CLIENT")]
+        [HttpGet("GetCurrentOrder")]
+        public async Task<IActionResult> GetCurrentOrder([FromQuery] GetCurrentOrderQueryParameter queryParameter)
+        {
+            string token = Request.Headers["Authorization"].ToString().Split(' ')[1];
+            var result = await _ordersService.GetCurrentOrder(queryParameter.UserId);
+            if(result == null)
+            {
+                return NotFound();
+            }
+            var result2 = await _barberShopService.GetBarberShopById(result.BarberShopId, token);
+            result.NameBarberShop = result2.Name;
+            return Ok(result);
+        }
+
+
+
+        [Authorize(Roles = "CLIENT")]
         [HttpGet("GetByUserId")]
         public async Task<IActionResult> GetOrdersByUserId([FromQuery] GetOrderByUserIdQueryParameter queryParameter)
         {

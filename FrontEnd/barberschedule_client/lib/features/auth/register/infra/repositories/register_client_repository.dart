@@ -7,7 +7,7 @@ import 'package:barberschedule_client/features/auth/register/infra/datasource/i_
 class RegisterClientRepository extends IRegisterClientRepository {
   RegisterClientRepository({required IRegisterClientDataSource dataSource})
       : _dataSource = dataSource;
-  IRegisterClientDataSource _dataSource;
+  final IRegisterClientDataSource _dataSource;
   @override
   Future<BaseApiResponse> registerClient(
     RegisterClientModel clientModel,

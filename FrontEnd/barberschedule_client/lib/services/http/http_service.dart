@@ -1,6 +1,10 @@
 import 'package:barberschedule_client/services/http/i_http_response.dart';
 import 'package:barberschedule_client/services/http/i_http_service.dart';
 import 'package:dio/dio.dart';
+import 'package:get_it/get_it.dart';
+
+import '../database/key/shared_preferences_service.dart';
+import 'authentication_interceptor.dart';
 
 class HttpServiceImp implements IHttpService {
   late Dio _dio;
@@ -12,10 +16,11 @@ class HttpServiceImp implements IHttpService {
     );
 
     _dio = Dio(options);
-    // _dio.interceptors.addAll([
-    //   HttpOptionsInterceptor(),
-    //   AuthenticationInterceptor(secureStorage: _storage)
-    // ]);
+    _dio.interceptors.addAll([
+      AuthorizationInterceptor(
+        sharedPreferencesService: GetIt.I.get<SharedPreferencesService>(),
+      ),
+    ]);
   }
   Future<HttpResponse<T>?> _executeRequest<T>(
     Future<Response> Function() executionFunction, {

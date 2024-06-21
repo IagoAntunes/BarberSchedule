@@ -15,62 +15,59 @@ class TimeSelectItem extends StatefulWidget {
     required this.text,
     required this.onTap,
     this.initialState = TimeSelectItemState.primary,
-    required this.onStateChanged,
   });
-  final void Function(TimeSelectItemState) onStateChanged;
-  final void Function()? onTap;
+  final void Function(ValueNotifier<TimeSelectItemState> newState)? onTap;
   final String text;
   final TimeSelectItemState initialState;
-
   @override
   State<TimeSelectItem> createState() => _TimeSelectItemState();
 }
 
 class _TimeSelectItemState extends State<TimeSelectItem> {
-  late TimeSelectItemState state;
-
+  late ValueNotifier<TimeSelectItemState> state;
   @override
   void initState() {
     super.initState();
-    state = widget.initialState;
+    state = ValueNotifier(widget.initialState);
+  }
+
+  void updateValue() {
+    if (widget.initialState == TimeSelectItemState.selected) {
+      state.value = TimeSelectItemState.selected;
+    } else {
+      state.value = TimeSelectItemState.primary;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(8),
-      onTap: state == TimeSelectItemState.disabled
-          ? null
-          : () {
-              if (state == TimeSelectItemState.selected) {
-                setState(() {
-                  state = TimeSelectItemState.primary;
-                });
-                widget.onStateChanged.call(state);
-              } else if (state == TimeSelectItemState.primary) {
-                setState(() {
-                  state = TimeSelectItemState.selected;
-                });
-                widget.onStateChanged.call(state);
-              }
+    return ValueListenableBuilder(
+        valueListenable: state,
+        builder: (context, _, child) {
+          updateValue();
+          return InkWell(
+            borderRadius: BorderRadius.circular(8),
+            onTap: () {
+              widget.onTap!(state);
             },
-      child: Container(
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: _backgroundColorByState(),
-          borderRadius: BorderRadius.circular(8),
-          border: _boxBorderByState(),
-        ),
-        child: Text(
-          widget.text,
-          style: _textStyleByState(),
-        ),
-      ),
-    );
+            child: Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: _backgroundColorByState(),
+                borderRadius: BorderRadius.circular(8),
+                border: _boxBorderByState(),
+              ),
+              child: Text(
+                widget.text,
+                style: _textStyleByState(),
+              ),
+            ),
+          );
+        });
   }
 
   BoxBorder _boxBorderByState() {
-    switch (state) {
+    switch (state.value) {
       case TimeSelectItemState.primary:
         return Border.all(
           color: AppStyleColors.gray500,
@@ -95,7 +92,7 @@ class _TimeSelectItemState extends State<TimeSelectItem> {
   }
 
   TextStyle _textStyleByState() {
-    switch (state) {
+    switch (state.value) {
       case TimeSelectItemState.primary:
         return AppTextStyle.textMd.copyWith(color: AppStyleColors.gray200);
       case TimeSelectItemState.hover:
@@ -108,7 +105,7 @@ class _TimeSelectItemState extends State<TimeSelectItem> {
   }
 
   Color _backgroundColorByState() {
-    switch (state) {
+    switch (state.value) {
       case TimeSelectItemState.primary:
         return AppStyleColors.gray600;
       case TimeSelectItemState.hover:

@@ -86,7 +86,7 @@ namespace BarberSchedule.Services.OrdersAPI.Services
             return response;
         }
 
-        public async Task<GetOrderResponseDto?> GetCurrentOrder(string userId)
+        public async Task<GetCurrentOrderResponse?> GetCurrentOrder(string userId)
         {
             var orders = await _dbCOntext.Orders
                    .Where(x => x.UserId == userId).ToListAsync();
@@ -108,7 +108,7 @@ namespace BarberSchedule.Services.OrdersAPI.Services
             }
             auxList.OrderByDescending(x => DateTime.Parse(x.DateTime));
 
-            var responseDto = _mapper.Map<GetOrderResponseDto>(auxList.First());
+            var responseDto = _mapper.Map<GetCurrentOrderResponse>(auxList.First());
 
             return responseDto;
         }

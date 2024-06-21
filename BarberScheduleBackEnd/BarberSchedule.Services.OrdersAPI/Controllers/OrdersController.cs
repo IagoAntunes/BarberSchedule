@@ -105,7 +105,7 @@ namespace BarberSchedule.Services.OrdersAPI.Controllers
                 return NotFound();
             }
             var result2 = await _barberShopService.GetBarberShopById(result.BarberShopId, token);
-            result.BarberShop = result2;
+            result.NameBarberShop = result2.Name;
             return Ok(result);
         }
 

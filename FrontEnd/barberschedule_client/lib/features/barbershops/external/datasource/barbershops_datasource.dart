@@ -16,7 +16,7 @@ class BarbershopsDataSource extends IBarberShopsDataSource {
       final response = await _httpService.get(
         AppApiRoutes.getAllBarberShops(),
       );
-      if (response!.statusCode == HttpStatus.OK) {
+      if (response!.statusCode == HttpStatus.ok) {
         return ResponseData.success(response.data);
       }
       return ResponseData.error(response.data);

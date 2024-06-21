@@ -1,10 +1,10 @@
 import 'package:barberschedule_client/features/barbershops/presentation/states/barbershops_state.dart';
 import 'package:barberschedule_client/features/home/presentation/blocs/scheduled_time_cubit.dart';
+import 'package:barberschedule_client/features/home/presentation/pages/scheduling_page.dart';
 import 'package:barberschedule_client/features/home/presentation/states/home_states.dart';
 import 'package:barberschedule_design_system/settings/style/app_style_colors.dart';
 import 'package:barberschedule_design_system/settings/style/app_text_style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -129,7 +129,14 @@ class SuccessListBarberShops extends StatelessWidget {
         itemBuilder: (context, index) => InkWell(
           borderRadius: BorderRadius.circular(8),
           onTap: () {
-            //
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SchedulingPage(
+                  barberShop: listBarberShops[index],
+                ),
+              ),
+            );
           },
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),

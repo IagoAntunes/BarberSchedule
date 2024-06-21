@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 class BarberShopModel {
+  final String id;
   final String userId;
   final String name;
   final String description;
@@ -9,8 +10,9 @@ class BarberShopModel {
   final String city;
   final String number;
   final String availableTimes;
-  final int price;
+  final double price;
   BarberShopModel({
+    required this.id,
     required this.userId,
     required this.name,
     required this.description,
@@ -38,6 +40,7 @@ class BarberShopModel {
 
   factory BarberShopModel.fromMap(Map<String, dynamic> map) {
     return BarberShopModel(
+      id: map['id'].toString(),
       userId: map['userId'] as String,
       name: map['name'] as String,
       description: map['description'] as String,
@@ -46,7 +49,7 @@ class BarberShopModel {
       city: map['city'] as String,
       number: map['number'] as String,
       availableTimes: map['availableTimes'] as String,
-      price: map['price'] as int,
+      price: double.parse(map['price'].toString()),
     );
   }
 

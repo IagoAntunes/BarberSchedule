@@ -21,6 +21,10 @@ abstract class AppApiRoutes {
     return '${_ordersApiUrl}Orders/GetCurrentOrder';
   }
 
+  static String createOrder() {
+    return '${_ordersApiUrl}Orders/Create';
+  }
+
   static String getAllBarberShops() {
     return '${_barberShopApiUrl}BarberShopInfo/GetAll';
   }

@@ -14,10 +14,12 @@ class CDataInput extends StatefulWidget {
     this.hintText,
     required this.controller,
     this.preffixIcon,
+    required this.changedTime,
   });
   final String? hintText;
   final TextEditingController controller;
   final Widget? preffixIcon;
+  final Function() changedTime;
   @override
   State<CDataInput> createState() => _CDataInputState();
 }
@@ -36,6 +38,9 @@ class _CDataInputState extends State<CDataInput> {
       controller: widget.controller,
       style: hintStyleByType(),
       readOnly: true,
+      onEditingComplete: () {
+        print("Oi");
+      },
       onTap: () async {
         setState(() {
           cFormFieldState = CCDataInputState.active;
@@ -51,6 +56,7 @@ class _CDataInputState extends State<CDataInput> {
             cFormFieldState = CCDataInputState.primary;
             if (value != null) {
               widget.controller.text = DateFormat("dd/MM/yyyy").format(value);
+              widget.changedTime.call();
             }
           });
         });

@@ -10,7 +10,7 @@ import '../../../home/presentation/widgets/item_marking_history_widget.dart';
 import '../blocs/marking_history_cubit.dart';
 
 class MarkingHistoryPage extends StatefulWidget {
-  MarkingHistoryPage({super.key});
+  const MarkingHistoryPage({super.key});
 
   @override
   State<MarkingHistoryPage> createState() => _MarkingHistoryPageState();
@@ -36,62 +36,59 @@ class _MarkingHistoryPageState extends State<MarkingHistoryPage> {
         builder: (context, state) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    "Histórico de horarios",
-                    style: AppTextStyle.textSm
-                        .copyWith(color: AppStyleColors.gray200),
-                    textAlign: TextAlign.start,
-                  ),
-                  const SizedBox(height: 12),
-                  switch (markingHistoryCubit.state) {
-                    LoadingMarkingHistoryState() =>
-                      const Center(child: CircularProgressIndicator()),
-                    FailureMarkingHistoryState() => const ErrorStateWidget(),
-                    (SuccessMarkingHistoryState successState) => successState
-                            .markingHistory.isEmpty
-                        ? Container(
-                            padding: const EdgeInsets.symmetric(
-                              vertical: 16,
-                              horizontal: 32,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  "Histórico de horarios",
+                  style: AppTextStyle.textSm
+                      .copyWith(color: AppStyleColors.gray200),
+                  textAlign: TextAlign.start,
+                ),
+                const SizedBox(height: 12),
+                switch (markingHistoryCubit.state) {
+                  LoadingMarkingHistoryState() =>
+                    const Center(child: CircularProgressIndicator()),
+                  FailureMarkingHistoryState() => const ErrorStateWidget(),
+                  (SuccessMarkingHistoryState successState) => successState
+                          .markingHistory.isEmpty
+                      ? Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 16,
+                            horizontal: 32,
+                          ),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: AppStyleColors.gray500,
                             ),
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: AppStyleColors.gray500,
+                            borderRadius: BorderRadius.circular(8),
+                            color: AppStyleColors.gray600,
+                          ),
+                          width: double.infinity,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Nenhum historico de horarios marcados",
+                                style: AppTextStyle.textSm
+                                    .copyWith(color: AppStyleColors.gray200),
                               ),
-                              borderRadius: BorderRadius.circular(8),
-                              color: AppStyleColors.gray600,
-                            ),
-                            width: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Nenhum historico de horarios marcados",
-                                  style: AppTextStyle.textSm
-                                      .copyWith(color: AppStyleColors.gray200),
-                                ),
-                              ],
-                            ),
-                          )
-                        : Expanded(
-                            child: ListView.separated(
-                              itemCount: successState.markingHistory.length,
-                              separatorBuilder: (context, index) =>
-                                  const SizedBox(height: 16),
-                              itemBuilder: (context, index) =>
-                                  ItemMarkingHistory(
-                                order: successState.markingHistory[index],
-                              ),
+                            ],
+                          ),
+                        )
+                      : Expanded(
+                          child: ListView.separated(
+                            itemCount: successState.markingHistory.length,
+                            separatorBuilder: (context, index) =>
+                                const SizedBox(height: 16),
+                            itemBuilder: (context, index) => ItemMarkingHistory(
+                              order: successState.markingHistory[index],
                             ),
                           ),
-                    _ => Container(),
-                  }
-                ],
-              ),
+                        ),
+                  _ => Container(),
+                }
+              ],
             ),
           );
         },

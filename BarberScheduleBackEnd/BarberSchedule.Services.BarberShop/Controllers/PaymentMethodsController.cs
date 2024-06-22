@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BarberSchedule.Services.BarberShop.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PaymentMethodsController : ControllerBase

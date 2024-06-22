@@ -80,6 +80,7 @@ namespace BarberSchedule.Services.AuthAPI.Services
 
             var barberShopDto = new BarberShopInfoDto()
             {
+                Id = barberShopInfo.Id,
                 UserId = barberShopInfo.UserId,
                 Name = barberShopInfo.Name,
                 Description = barberShopInfo.Description,
